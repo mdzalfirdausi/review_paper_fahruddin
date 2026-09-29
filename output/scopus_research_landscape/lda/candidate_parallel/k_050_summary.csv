@@ -1,0 +1,2 @@
+"K","Perplexity","Mean_Coherence","Median_Coherence","Min_Coherence","Max_Coherence","SD_Coherence","Mean_Similarity","Median_Similarity","Max_Similarity","SD_Similarity","Elapsed_seconds","Training_documents","Heldout_documents","Vocabulary","Empty_training_removed","Empty_heldout_removed"
+50,508.044360728243,-77.8357615573728,-76.0086961835283,-108.620847672359,-47.0165031758862,15.6186087726551,0.0427334430248346,0.024252692530381,0.501865882173569,0.0541932199860656,881.623584985733,40608,10153,2002,0,0

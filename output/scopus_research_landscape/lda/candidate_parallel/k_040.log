@@ -1,0 +1,15 @@
+K: 40 
+Training documents: 40608 
+Held-out documents: 10153 
+Vocabulary: 2002 
+Minimum DF: 254 
+Top terms: 10 
+Burn-in: 500 
+Iterations: 2000 
+Thin: 50 
+
+Fitting candidate K = 40 ...
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  2694332 143.9    7368640  393.6  12187144  650.9
+Vcells 46152818 352.2  415099335 3167.0 517699523 3949.8
+DONE K=40 | perplexity=530.3320 | mean coherence=-72.8493 | mean similarity=0.0517 | max similarity=0.6090 | 738.99 s

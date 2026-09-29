@@ -1,0 +1,67 @@
+Checking R environment...
+
+Rscript:
+/nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript
+
+Required R packages:
+tm=TRUE
+SnowballC=TRUE
+slam=TRUE
+topicmodels=TRUE
+
+
+Checking input files...
+
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_train_indices.csv
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_test_indices.csv
+
+Created R worker: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/candidate_parallel/evaluate_single_k_scopus.R
+
+============================================================================
+SCOPUS ACADEMIC PARALLEL CANDIDATE MODEL EVALUATION
+============================================================================
+Project directory : /nfs/mfirdausi/project/review_paper_fahruddin
+Rscript           : /nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript
+Processed corpus  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Training indices  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_train_indices.csv
+Held-out indices  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_test_indices.csv
+Minimum DF        : 254
+K values          : [40, 50, 60, 70, 80, 90]
+Parallel workers  : 4
+Top terms         : 10
+Random seed       : 123
+Burn-in           : 500
+Iterations        : 2000
+Thin              : 50
+============================================================================
+[DONE] K=40 | perplexity=530.3320 | coherence=-72.8493 | mean similarity=0.0517 | max similarity=0.6090 | R time=738.99 s
+[DONE] K=50 | perplexity=508.0444 | coherence=-77.8358 | mean similarity=0.0427 | max similarity=0.5019 | R time=881.62 s
+[DONE] K=60 | perplexity=486.6340 | coherence=-78.6742 | mean similarity=0.0390 | max similarity=0.5496 | R time=980.83 s
+[DONE] K=70 | perplexity=470.5901 | coherence=-81.3377 | mean similarity=0.0361 | max similarity=0.9287 | R time=1084.91 s
+[DONE] K=80 | perplexity=455.2373 | coherence=-81.8738 | mean similarity=0.0332 | max similarity=0.8260 | R time=1263.69 s
+[DONE] K=90 | perplexity=444.0824 | coherence=-81.8783 | mean similarity=0.0299 | max similarity=0.9176 | R time=1407.98 s
+
+============================================================================
+FINAL CANDIDATE MODEL RESULTS
+============================================================================
+
+ K  Perplexity  Mean_Coherence  Median_Coherence  Min_Coherence  Mean_Similarity  Median_Similarity  Max_Similarity  Elapsed_seconds
+40  530.332041      -72.849265        -70.697003    -110.100613         0.051678           0.035823        0.608996       738.987555
+50  508.044361      -77.835762        -76.008696    -108.620848         0.042733           0.024253        0.501866       881.623585
+60  486.633958      -78.674239        -78.741797    -124.762784         0.038978           0.019960        0.549586       980.829593
+70  470.590096      -81.337746        -82.372716    -131.960615         0.036071           0.017360        0.928674      1084.908672
+80  455.237301      -81.873842        -81.188170    -127.039477         0.033202           0.013793        0.826032      1263.694546
+90  444.082438      -81.878317        -79.758393    -136.250270         0.029916           0.012597        0.917632      1407.979113
+
+Topic diagnostic rows: 390
+Top-term rows: 3900
+
+Total wall time: 38.71 minutes
+
+Summary output: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_candidate_evaluation.csv
+Topic output  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_candidate_topic_diagnostics.csv
+Top terms     : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_candidate_top_terms.csv
+Individual files: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/candidate_parallel
+
+All candidate models completed successfully.

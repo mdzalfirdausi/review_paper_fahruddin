@@ -194,15 +194,10 @@ TOP_TERMS_FILE = (
 # CONFIGURATION
 # ============================================================
 
-K_VALUES = [
-    40,
-    50,
-    60,
-    70,
-]
+K_VALUES = [40, 50, 60, 70, 80, 90]
 
 
-MIN_DOC_FREQ = 83
+MIN_DOC_FREQ = 254
 
 RANDOM_SEED = 123
 
