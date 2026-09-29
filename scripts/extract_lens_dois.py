@@ -34,7 +34,10 @@ LENS_DIR = (
 
 INPUT_FILE = (
     LENS_DIR
-    / "lenspatcite-export-M_Muna-84f6bb81-32bc-4ec9-97c6-f970293a9752-2026-09-25_01-48-07_cited.xlsx"
+    / (
+        "lenspatcite-export-M_Muna-84f6bb81-32bc-4ec9-"
+        "97c6-f970293a9752-2026-09-25_01-48-07_cited.xlsx"
+    )
 )
 
 OUTPUT_FILE = (
@@ -52,10 +55,23 @@ EXTERNAL_ID_COLUMN = (
 # Validate input
 # =========================================================
 
-print("Project directory :", PROJECT_DIR)
-print("Lens directory    :", LENS_DIR)
-print("Input file        :", INPUT_FILE)
+print(
+    "Project directory :",
+    PROJECT_DIR
+)
+
+print(
+    "Lens directory    :",
+    LENS_DIR
+)
+
+print(
+    "Input file        :",
+    INPUT_FILE
+)
+
 print()
+
 
 if not INPUT_FILE.exists():
 
@@ -72,6 +88,7 @@ if not INPUT_FILE.exists():
 df = pd.read_excel(
     INPUT_FILE
 )
+
 
 print("Lens export")
 print("-----------")
@@ -100,6 +117,7 @@ if EXTERNAL_ID_COLUMN not in df.columns:
     )
 
     for column in df.columns:
+
         print(
             f"  - {column}"
         )
@@ -109,6 +127,7 @@ if EXTERNAL_ID_COLUMN not in df.columns:
         f"'{EXTERNAL_ID_COLUMN}' "
         f"was not found."
     )
+
 
 print(
     "External ID column:",
@@ -122,14 +141,22 @@ print()
 # DOI extraction
 # =========================================================
 
-# Example Lens value:
+# A Lens external-ID cell may contain one DOI:
 #
 # DOI:10.1016/j.neucom.2013.03.029
 # MAGID:magid:1985230864
 #
-# Extract only the DOI appearing after "DOI:".
+# Or it may contain multiple DOIs:
 #
-# The DOI stops at whitespace/newline or another identifier.
+# DOI:10.20944/preprints202507.1980.v1
+# DOI:10.3390/s25185646
+# PMID:41012884
+# PMCID:pmc12473902
+#
+# ALL DOI identifiers are extracted.
+#
+# The DOI stops at whitespace/newline. Other identifiers such
+# as PMID, PMCID, MAGID, etc. are ignored.
 
 DOI_PATTERN = re.compile(
     r"(?i)\bDOI:\s*"
@@ -137,30 +164,18 @@ DOI_PATTERN = re.compile(
 )
 
 
-def extract_doi(value):
+def normalize_doi(value):
     """
-    Extract a DOI from Lens 'Citation External Id'.
+    Normalize an extracted DOI.
 
     Returns
     -------
-    str or None
+    str
         Normalized lowercase DOI.
     """
 
-    if pd.isna(value):
-        return None
-
-    text = str(value).strip()
-
-    match = DOI_PATTERN.search(
-        text
-    )
-
-    if match is None:
-        return None
-
     doi = (
-        match.group(1)
+        str(value)
         .strip()
         .rstrip(
             ".,;"
@@ -171,10 +186,98 @@ def extract_doi(value):
     return doi
 
 
-df["clean_doi"] = (
-    df[EXTERNAL_ID_COLUMN]
+def extract_dois(value):
+    """
+    Extract ALL DOIs from a Lens 'citation external id' cell.
+
+    Parameters
+    ----------
+    value : object
+        Value from the Lens external-ID column.
+
+    Returns
+    -------
+    list[str]
+        All normalized DOI values found in the cell.
+
+    Examples
+    --------
+    Input:
+
+        DOI:10.20944/preprints202507.1980.v1
+        DOI:10.3390/s25185646
+        PMID:41012884
+        PMCID:pmc12473902
+
+    Output:
+
+        [
+            "10.20944/preprints202507.1980.v1",
+            "10.3390/s25185646",
+        ]
+    """
+
+    if pd.isna(value):
+
+        return []
+
+
+    text = str(
+        value
+    ).strip()
+
+
+    matches = DOI_PATTERN.findall(
+        text
+    )
+
+
+    dois = [
+        normalize_doi(
+            match
+        )
+        for match in matches
+    ]
+
+
+    # Remove repeated occurrences of the same DOI within
+    # a single cell while preserving the original order.
+
+    dois = list(
+        dict.fromkeys(
+            dois
+        )
+    )
+
+
+    return dois
+
+
+# =========================================================
+# Extract all DOIs from every Lens row
+# =========================================================
+
+df = df.copy()
+
+
+df["clean_dois"] = (
+    df[
+        EXTERNAL_ID_COLUMN
+    ]
     .apply(
-        extract_doi
+        extract_dois
+    )
+)
+
+
+# Number of DOI identifiers found in each Lens row.
+
+df["doi_count"] = (
+    df[
+        "clean_dois"
+    ]
+    .apply(
+        len
     )
 )
 
@@ -183,40 +286,87 @@ df["clean_doi"] = (
 # DOI diagnostics
 # =========================================================
 
-n_documents = len(df)
+n_documents = len(
+    df
+)
+
 
 n_with_doi = (
-    df["clean_doi"]
-    .notna()
-    .sum()
-)
-
-n_without_doi = (
-    df["clean_doi"]
-    .isna()
-    .sum()
-)
-
-n_unique_dois = (
-    df["clean_doi"]
-    .dropna()
-    .nunique()
-)
-
-n_duplicate_rows = (
-    df.loc[
-        df["clean_doi"].notna(),
-        "clean_doi",
+    df[
+        "doi_count"
     ]
-    .duplicated(
-        keep=False
+    .gt(
+        0
     )
     .sum()
 )
 
+
+n_without_doi = (
+    df[
+        "doi_count"
+    ]
+    .eq(
+        0
+    )
+    .sum()
+)
+
+
+n_with_one_doi = (
+    df[
+        "doi_count"
+    ]
+    .eq(
+        1
+    )
+    .sum()
+)
+
+
+n_with_multiple_dois = (
+    df[
+        "doi_count"
+    ]
+    .gt(
+        1
+    )
+    .sum()
+)
+
+
+n_doi_occurrences = int(
+    df[
+        "doi_count"
+    ]
+    .sum()
+)
+
+
+# =========================================================
+# Flatten all DOI lists
+# =========================================================
+
+all_dois = [
+    doi
+    for row_dois in df[
+        "clean_dois"
+    ]
+    for doi in row_dois
+]
+
+
+n_unique_dois = len(
+    set(
+        all_dois
+    )
+)
+
+
 n_duplicate_extra = (
-    n_with_doi
-    - n_unique_dois
+    len(all_dois)
+    -
+    n_unique_dois
 )
 
 
@@ -224,32 +374,42 @@ print("DOI extraction")
 print("--------------")
 
 print(
-    f"Scholar documents    : "
+    f"Scholar documents       : "
     f"{n_documents:,}"
 )
 
 print(
-    f"Rows with DOI        : "
+    f"Rows with DOI           : "
     f"{n_with_doi:,}"
 )
 
 print(
-    f"Rows without DOI     : "
+    f"Rows without DOI        : "
     f"{n_without_doi:,}"
 )
 
 print(
-    f"Unique DOIs          : "
+    f"Rows with one DOI       : "
+    f"{n_with_one_doi:,}"
+)
+
+print(
+    f"Rows with multiple DOIs : "
+    f"{n_with_multiple_dois:,}"
+)
+
+print(
+    f"Total DOI occurrences   : "
+    f"{n_doi_occurrences:,}"
+)
+
+print(
+    f"Unique DOIs             : "
     f"{n_unique_dois:,}"
 )
 
 print(
-    f"Duplicate DOI rows   : "
-    f"{n_duplicate_rows:,}"
-)
-
-print(
-    f"Duplicate DOI excess : "
+    f"Duplicate DOI excess    : "
     f"{n_duplicate_extra:,}"
 )
 
@@ -260,7 +420,17 @@ print()
 # Inspect rows without DOI
 # =========================================================
 
-if n_without_doi > 0:
+without_doi_mask = (
+    df[
+        "doi_count"
+    ]
+    .eq(
+        0
+    )
+)
+
+
+if without_doi_mask.any():
 
     print(
         "Rows without a DOI"
@@ -270,11 +440,14 @@ if n_without_doi > 0:
         "------------------"
     )
 
-    # Try to include a title-like field if Lens provides one.
+
     title_candidates = [
         "Citation Title",
+        "citation title",
         "Title",
+        "title",
     ]
+
 
     columns_to_show = [
         column
@@ -282,13 +455,15 @@ if n_without_doi > 0:
         if column in df.columns
     ]
 
+
     columns_to_show.append(
         EXTERNAL_ID_COLUMN
     )
 
+
     print(
         df.loc[
-            df["clean_doi"].isna(),
+            without_doi_mask,
             columns_to_show,
         ]
         .to_string(
@@ -300,33 +475,37 @@ if n_without_doi > 0:
 
 
 # =========================================================
-# Inspect duplicated DOIs
+# Inspect rows containing multiple DOIs
 # =========================================================
 
-duplicate_mask = (
-    df["clean_doi"]
-    .notna()
-    &
-    df["clean_doi"]
-    .duplicated(
-        keep=False
+multiple_doi_mask = (
+    df[
+        "doi_count"
+    ]
+    .gt(
+        1
     )
 )
 
-if duplicate_mask.any():
+
+if multiple_doi_mask.any():
 
     print(
-        "Duplicated DOIs"
+        "Rows with multiple DOIs"
     )
 
     print(
-        "---------------"
+        "-----------------------"
     )
+
 
     title_candidates = [
         "Citation Title",
+        "citation title",
         "Title",
+        "title",
     ]
+
 
     columns_to_show = [
         column
@@ -334,22 +513,89 @@ if duplicate_mask.any():
         if column in df.columns
     ]
 
-    columns_to_show.append(
-        "clean_doi"
+
+    diagnostic_df = (
+        df.loc[
+            multiple_doi_mask,
+            columns_to_show
+            +
+            [
+                EXTERNAL_ID_COLUMN,
+                "clean_dois",
+            ],
+        ]
+        .copy()
     )
 
-    print(
-        df.loc[
-            duplicate_mask,
-            columns_to_show,
+
+    diagnostic_df[
+        "clean_dois"
+    ] = (
+        diagnostic_df[
+            "clean_dois"
         ]
-        .sort_values(
-            "clean_doi"
+        .apply(
+            lambda values:
+                "; ".join(values)
         )
+    )
+
+
+    print(
+        diagnostic_df
         .to_string(
             index=False
         )
     )
+
+    print()
+
+
+# =========================================================
+# Inspect DOIs appearing in more than one Lens row
+# =========================================================
+
+doi_series = pd.Series(
+    all_dois,
+    dtype="object",
+)
+
+
+duplicate_dois = (
+    doi_series[
+        doi_series.duplicated(
+            keep=False
+        )
+    ]
+    .sort_values()
+)
+
+
+if not duplicate_dois.empty:
+
+    print(
+        "DOIs occurring more than once"
+    )
+
+    print(
+        "------------------------------"
+    )
+
+
+    duplicate_counts = (
+        duplicate_dois
+        .value_counts()
+        .sort_index()
+    )
+
+
+    for doi, count in duplicate_counts.items():
+
+        print(
+            f"{doi} : "
+            f"{count:,} occurrences"
+        )
+
 
     print()
 
@@ -358,16 +604,22 @@ if duplicate_mask.any():
 # Save one UNIQUE DOI per line
 # =========================================================
 
-dois = (
-    df["clean_doi"]
-    .dropna()
-    .drop_duplicates()
-    .tolist()
+# Preserve the order in which DOI values first occur in the
+# Lens export.
+
+dois = list(
+    dict.fromkeys(
+        all_dois
+    )
 )
 
+
 OUTPUT_FILE.write_text(
-    "\n".join(dois)
-    + (
+    "\n".join(
+        dois
+    )
+    +
+    (
         "\n"
         if dois
         else ""
@@ -389,7 +641,7 @@ print(
 )
 
 print(
-    f"DOIs written: "
+    f"Unique DOIs written: "
     f"{len(dois):,}"
 )
 
@@ -397,29 +649,44 @@ print()
 
 
 # =========================================================
-# One-document / one-DOI validation
+# Validation
 # =========================================================
 
-if (
-    n_with_doi == n_documents
-    and
-    n_unique_dois == n_documents
+errors = []
+
+
+if n_without_doi > 0:
+
+    errors.append(
+        f"{n_without_doi:,} scholarly document(s) "
+        f"do not contain an extractable DOI."
+    )
+
+
+if len(dois) != n_unique_dois:
+
+    errors.append(
+        "The number of written DOI values does not "
+        "match the number of unique extracted DOIs."
+    )
+
+
+if len(dois) != len(
+    set(
+        dois
+    )
 ):
 
-    print(
-        "CHECK PASSED"
+    errors.append(
+        "The output contains duplicate DOI values."
     )
 
-    print(
-        "------------"
-    )
 
-    print(
-        "Every scholarly document has "
-        "exactly one unique DOI."
-    )
+# =========================================================
+# Final status
+# =========================================================
 
-else:
+if errors:
 
     print(
         "CHECK WARNING"
@@ -429,23 +696,63 @@ else:
         "-------------"
     )
 
+
+    for error in errors:
+
+        print(
+            " -",
+            error
+        )
+
+
+else:
+
     print(
-        f"Lens contains "
-        f"{n_documents:,} scholarly documents, "
-        f"but only {n_unique_dois:,} unique DOIs "
-        f"were extracted."
+        "CHECK PASSED"
     )
 
-    if n_without_doi > 0:
+    print(
+        "------------"
+    )
 
-        print(
-            f"- {n_without_doi:,} document(s) "
-            f"do not contain an extractable DOI."
-        )
 
-    if n_duplicate_extra > 0:
+    print(
+        "Every Lens scholarly document contains "
+        "at least one extractable DOI."
+    )
 
-        print(
-            f"- {n_duplicate_extra:,} DOI occurrence(s) "
-            f"are duplicates."
-        )
+    print(
+        "All DOI identifiers in each Lens row "
+        "were extracted."
+    )
+
+    print(
+        "The output contains one line per unique DOI."
+    )
+
+
+# =========================================================
+# Multiple-DOI summary
+# =========================================================
+
+if n_with_multiple_dois > 0:
+
+    print()
+
+    print(
+        "MULTIPLE-DOI NOTE"
+    )
+
+    print(
+        "-----------------"
+    )
+
+    print(
+        f"{n_with_multiple_dois:,} Lens document(s) "
+        f"contain more than one DOI."
+    )
+
+    print(
+        "All DOI values from those documents were "
+        "included in the output."
+    )
