@@ -1,0 +1,65 @@
+Checking R environment...
+
+Rscript:
+/nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript
+
+Required R packages:
+tm=TRUE
+SnowballC=TRUE
+slam=TRUE
+topicmodels=TRUE
+
+
+Checking input files...
+
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_train_indices.csv
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_test_indices.csv
+
+Created R worker: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/coarse_parallel/fit_single_k_scopus.R
+
+========================================================================
+SCOPUS ACADEMIC PARALLEL COARSE K SEARCH
+========================================================================
+Project directory : /nfs/mfirdausi/project/review_paper_fahruddin
+Rscript           : /nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript
+Processed corpus  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Training indices  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_train_indices.csv
+Held-out indices  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_test_indices.csv
+Minimum DF        : 254
+K values          : [5, 10, 15, 20, 25, 30, 40, 50, 60]
+Parallel workers  : 8
+Burn-in           : 200
+Iterations        : 800
+Thin              : 20
+========================================================================
+[DONE] K= 5 | perplexity=728.2590 | R time=171.24 s
+[DONE] K=10 | perplexity=668.0262 | R time=196.03 s
+[DONE] K=15 | perplexity=632.3958 | R time=224.55 s
+[DONE] K=20 | perplexity=603.2165 | R time=275.21 s
+[DONE] K=25 | perplexity=582.4178 | R time=289.89 s
+[DONE] K=30 | perplexity=563.0410 | R time=354.75 s
+[DONE] K=40 | perplexity=531.5951 | R time=378.59 s
+[DONE] K=50 | perplexity=507.8650 | R time=549.01 s
+[DONE] K=60 | perplexity=488.6053 | R time=412.30 s
+
+========================================================================
+FINAL COARSE K RESULTS
+========================================================================
+
+ K  Perplexity  Elapsed_seconds
+ 5  728.258979       171.242354
+10  668.026243       196.025362
+15  632.395846       224.550260
+20  603.216461       275.211251
+25  582.417761       289.894739
+30  563.040960       354.752272
+40  531.595144       378.594630
+50  507.864969       549.014265
+60  488.605323       412.300542
+
+Total wall time: 10.58 minutes
+Combined result: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_coarse_k_search.csv
+Individual results: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/coarse_parallel
+
+All candidate K values completed successfully.

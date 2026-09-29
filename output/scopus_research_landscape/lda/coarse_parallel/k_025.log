@@ -1,8 +1,8 @@
 K: 25 
 Training documents: 40608 
 Held-out documents: 10153 
-Vocabulary: 3498 
-Minimum DF: 83 
+Vocabulary: 2002 
+Minimum DF: 254 
 Empty training removed: 0 
 Empty held-out removed: 0 
 Burn-in: 200 
@@ -10,3 +10,4 @@ Iterations: 800
 Thin: 20 
 
 Fitting K = 25 ...
+DONE K=25 | perplexity=582.4178 | elapsed=289.89 s

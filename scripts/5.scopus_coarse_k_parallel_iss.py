@@ -182,12 +182,8 @@ K_VALUES = [
 
 
 # Final DF threshold from notebook:
-#
-# 0.5% * 16,409 documents
-# = ceil(82.045)
-# = 83
-#
-MIN_DOC_FREQ = 83
+# 0.5% of 50,761 documents, rounded up
+MIN_DOC_FREQ = 254
 
 
 RANDOM_SEED = 123
