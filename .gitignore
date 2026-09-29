@@ -7,7 +7,7 @@
 
 # Large Scopus dataset
 data/scopus/scopus_full.xlsx
-
+output/scopus_research_landscape/lda/scopus_academic_corpus.csv
 # =========================================================
 # Python
 # =========================================================
