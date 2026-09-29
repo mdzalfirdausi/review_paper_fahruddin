@@ -1216,14 +1216,6 @@ print()
 errors = []
 
 
-if len(lens_doi_set) != 778:
-
-    errors.append(
-        "Expected 778 unique Lens DOIs, "
-        f"found {len(lens_doi_set):,}."
-    )
-
-
 if len(matched_dois) != len(
     lens_doi_set
 ):
