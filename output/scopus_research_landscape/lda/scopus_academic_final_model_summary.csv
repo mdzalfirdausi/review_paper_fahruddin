@@ -1,0 +1,2 @@
+"K","Documents","Vocabulary","Minimum_DF","Empty_Documents_Removed","Random_Seed","Burn_In","Iterations","Thin","Top_N","Representative_N","Theta_Max_RowSum_Error","Beta_Max_RowSum_Error","Topic_Prevalence_Sum","Elapsed_seconds"
+50,50761,2002,254,0,123,500,2000,50,10,5,1.11022302462516e-16,2.22044604925031e-16,1,1013.52544021606
