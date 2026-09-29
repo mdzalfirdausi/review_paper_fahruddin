@@ -1,0 +1,13 @@
+K: 90 
+Training documents: 40608 
+Held-out documents: 10153 
+Vocabulary: 2002 
+Minimum DF: 254 
+Empty training removed: 0 
+Empty held-out removed: 0 
+Burn-in: 200 
+Iterations: 800 
+Thin: 20 
+
+Fitting K = 90 ...
+DONE K=90 | perplexity=444.7017 | elapsed=575.22 s

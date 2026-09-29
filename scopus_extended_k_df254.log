@@ -1,0 +1,53 @@
+Checking R environment...
+
+Rscript:
+/nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript
+
+Required R packages:
+tm=TRUE
+SnowballC=TRUE
+slam=TRUE
+topicmodels=TRUE
+
+
+Checking input files...
+
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_train_indices.csv
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_test_indices.csv
+
+Created R worker: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/extended_parallel/fit_single_k_scopus_extended.R
+
+========================================================================
+SCOPUS ACADEMIC PARALLEL EXTENDED K SEARCH
+========================================================================
+Project directory : /nfs/mfirdausi/project/review_paper_fahruddin
+Rscript           : /nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript
+Processed corpus  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Training indices  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_train_indices.csv
+Held-out indices  : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_test_indices.csv
+Minimum DF        : 254
+K values          : [70, 80, 90]
+Parallel workers  : 3
+Burn-in           : 200
+Iterations        : 800
+Thin              : 20
+========================================================================
+[DONE] K=70 | perplexity=470.6303 | R time=446.58 s
+[DONE] K=80 | perplexity=456.2582 | R time=515.19 s
+[DONE] K=90 | perplexity=444.7017 | R time=575.22 s
+
+========================================================================
+FINAL EXTENDED K RESULTS
+========================================================================
+
+ K  Perplexity  Elapsed_seconds
+70  470.630283       446.578929
+80  456.258229       515.189252
+90  444.701693       575.216990
+
+Total wall time: 9.83 minutes
+Combined result: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_extended_k_search.csv
+Individual results: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/extended_parallel
+
+All extended K values completed successfully.
