@@ -1,0 +1,16 @@
+Constructing full-corpus DTM...
+Raw documents: 50761 
+Raw vocabulary: 120114 
+Filtered vocabulary: 2002 
+Minimum DF: 254 
+Documents retained: 50761 
+Empty documents removed: 0 
+Final K: 50 
+Random seed: 123 
+Burn-in: 500 
+Iterations: 2000 
+Thin: 50 
+Top terms: 10 
+Representative documents per topic: 5 
+
+Fitting final K = 50 LDA model on full corpus...

@@ -1,0 +1,40 @@
+Checking R environment...
+
+Rscript:
+/nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript
+
+Required R packages:
+tm=TRUE
+SnowballC=TRUE
+slam=TRUE
+topicmodels=TRUE
+
+
+Checking input files...
+
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Found: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_corpus.csv
+
+Document alignment verified: 50,761 documents
+
+Created final R worker: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/final_model/fit_final_scopus_lda.R
+
+============================================================================
+FINAL SCOPUS ACADEMIC LDA
+============================================================================
+Project directory       : /nfs/mfirdausi/project/review_paper_fahruddin
+Processed corpus        : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv
+Academic metadata       : /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_corpus.csv
+Final K                 : 50
+Minimum DF              : 254
+Random seed             : 123
+Burn-in                 : 500
+Iterations              : 2000
+Thin                    : 50
+Top terms               : 10
+Representative documents: 5
+============================================================================
+
+Running final K=50 model...
+Log: /nfs/mfirdausi/project/review_paper_fahruddin/output/scopus_research_landscape/lda/scopus_academic_final_lda.log
+
