@@ -1,0 +1,906 @@
+Journal,Patent_Publications,Patent_Citations,Policy_Publications,Policy_Citations,Total_External_Publications,Patent_Rank,Policy_Rank
+Applied Energy,215,395,220,740,435.0,1,2
+IEEE Access,167,278,20,30,187.0,2,20
+Energies,144,299,90,214,234.0,3,6
+Energy,130,248,187,541,317.0,4,3
+Energy and Buildings,124,555,182,430,306.0,5,4
+IEEE Transactions on Smart Grid,79,161,30,48,109.0,6,15
+IEEE Transactions on Power Systems,74,185,57,163,131.0,7,10
+Renewable Energy,73,178,109,308,182.0,8,5
+Energy Conversion and Management,54,124,53,132,107.0,9,12
+IEEE Transactions on Sustainable Energy,52,97,25,47,77.0,10,18
+Solar Energy,51,127,74,193,125.0,11,8
+Building and Environment,38,160,49,117,87.0,12,13
+IEEE Transactions on Vehicular Technology,30,65,3,3,33.0,13,97
+Sustainability (Switzerland),30,118,0,0,30.0,13,449
+Applied Thermal Engineering,28,45,16,27,44.0,15,23
+Sensors,28,31,8,11,36.0,15,46
+Journal of Cleaner Production,27,36,72,211,99.0,17,9
+IEEE Internet of Things Journal,27,37,1,1,28.0,17,195
+International Journal of Electrical Power and Energy Systems,27,49,0,0,27.0,17,449
+Energy Reports,26,29,19,28,45.0,20,21
+IEEE Transactions on Industrial Informatics,26,58,7,8,33.0,20,52
+Scientific Reports,26,116,7,11,33.0,20,52
+Applied Sciences (Switzerland),26,66,0,0,26.0,20,449
+IEEE Transactions on Industrial Electronics,24,86,5,5,29.0,24,69
+Sensors (Switzerland),24,94,0,0,24.0,24,449
+IEEE Transactions on Computers,23,139,0,0,23.0,26,449
+Electric Power Systems Research,22,30,14,55,36.0,27,28
+IEEE Transactions on Power Electronics,22,122,5,13,27.0,27,69
+IEEE Journal of Solid-State Circuits,21,102,0,0,21.0,29,449
+International Journal of Hydrogen Energy,20,58,26,60,46.0,30,17
+IEEE Transactions on Industry Applications,20,25,5,5,25.0,30,69
+IEEE Transactions on Parallel and Distributed Systems,20,64,1,2,21.0,30,195
+IEEE Transactions on Mobile Computing,20,49,1,1,21.0,30,195
+Electronics (Switzerland),20,20,0,0,20.0,30,449
+Frontiers in Energy Research,19,20,8,35,27.0,35,46
+Desalination,19,35,5,6,24.0,35,69
+IET Renewable Power Generation,18,26,5,20,23.0,37,69
+IEEE Transactions on Consumer Electronics,18,51,3,9,21.0,37,97
+IEEE Transactions on Very Large Scale Integration (VLSI) Systems,18,47,1,1,19.0,37,195
+IEEE Transactions on Energy Conversion,16,60,6,11,22.0,40,60
+Energy and Environmental Science,15,59,0,0,15.0,41,449
+Engineering Applications of Artificial Intelligence,14,14,3,3,17.0,42,97
+IEEE Transactions on Wireless Communications,14,28,1,1,15.0,42,195
+Industrial and Engineering Chemistry Research,14,29,0,0,14.0,42,449
+Energy Policy,13,29,229,1280,242.0,45,1
+Wind Energy,13,23,17,117,30.0,45,22
+Sustainable Cities and Society,13,17,15,22,28.0,45,25
+Journal of Power Sources,13,41,8,13,21.0,45,46
+International Journal of Refrigeration,13,27,3,4,16.0,45,97
+Solar Energy Materials and Solar Cells,12,29,7,14,19.0,50,52
+Ocean Engineering,12,16,5,9,17.0,50,69
+IEEE Sensors Journal,12,35,0,0,12.0,50,449
+PLoS ONE,12,26,0,0,12.0,50,449
+Future Generation Computer Systems,11,22,3,4,14.0,54,97
+IEEE Transactions on Transportation Electrification,11,16,1,2,12.0,54,195
+IEEE Transactions on Instrumentation and Measurement,11,22,1,1,12.0,54,195
+IEEE Journal of Emerging and Selected Topics in Power Electronics,11,17,0,0,11.0,54,449
+IEEE Transactions on Circuits and Systems I: Regular Papers,11,34,0,0,11.0,54,449
+Water Research,10,26,12,23,22.0,59,33
+International Journal of Heat and Mass Transfer,10,18,4,5,14.0,59,84
+IEEE Transactions on Intelligent Transportation Systems,10,17,3,4,13.0,59,97
+Expert Systems with Applications,10,13,3,5,13.0,59,97
+Chemical Engineering Science,10,26,3,4,13.0,59,97
+IEEE Transactions on Control Systems Technology,10,25,1,4,11.0,59,195
+IEEE Journal on Selected Areas in Communications,10,22,0,0,10.0,59,449
+IEEE Transactions on Circuits and Systems II: Express Briefs,10,55,0,0,10.0,59,449
+Energy and Fuels,10,24,0,0,10.0,59,449
+Renewable and Sustainable Energy Reviews,9,19,32,97,41.0,68,14
+Journal of Building Engineering,9,11,11,19,20.0,68,34
+International Journal of Greenhouse Gas Control,9,19,6,12,15.0,68,60
+Neurocomputing,9,23,4,6,13.0,68,84
+Applied Soft Computing,9,10,2,2,11.0,68,125
+International Journal of Energy Research,9,13,2,4,11.0,68,125
+Journal of Modern Power Systems and Clean Energy,9,11,2,7,11.0,68,125
+IEEE Communications Magazine,9,39,1,1,10.0,68,195
+IEEE Transactions on Power Delivery,9,73,1,1,10.0,68,195
+IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems,9,30,1,1,10.0,68,195
+Journal of Supercomputing,9,21,0,0,9.0,68,449
+Measurement: Journal of the International Measurement Confederation,9,15,0,0,9.0,68,449
+Smart Materials and Structures,8,43,3,3,11.0,80,97
+Chemical Engineering Journal,8,16,2,6,10.0,80,125
+IEEE Transactions on Automation Science and Engineering,8,14,2,2,10.0,80,125
+IEEE Transactions on Green Communications and Networking,8,13,2,2,10.0,80,125
+Building Simulation,8,37,2,3,10.0,80,125
+Mathematical Problems in Engineering,8,10,1,1,9.0,80,195
+ACM Transactions on Architecture and Code Optimization,8,23,0,0,8.0,80,449
+Applied Soft Computing Journal,8,16,0,0,8.0,80,449
+Buildings,7,9,11,14,18.0,88,34
+Journal of Energy Storage,7,9,5,7,12.0,88,69
+IEEE Systems Journal,7,7,1,1,8.0,88,195
+Control Engineering Practice,7,17,1,1,8.0,88,195
+Wireless Communications and Mobile Computing,7,17,0,0,7.0,88,449
+IEEE Transactions on Electron Devices,7,9,0,0,7.0,88,449
+"IET Generation, Transmission and Distribution",7,10,0,0,7.0,88,449
+"Sensors and Actuators, A: Physical",7,11,0,0,7.0,88,449
+Fuel,6,9,10,13,16.0,96,40
+Transportation Research Part D: Transport and Environment,6,9,9,52,15.0,96,43
+Mathematics,6,7,4,4,10.0,96,84
+Journal of Process Control,6,6,3,5,9.0,96,97
+Computer Networks,6,21,2,2,8.0,96,125
+Nano Energy,6,17,2,3,8.0,96,125
+IEEE Transactions on Biomedical Circuits and Systems,6,277,2,5,8.0,96,125
+IEEE Transactions on Network and Service Management,6,9,1,1,7.0,96,195
+Neural Computing and Applications,6,8,1,1,7.0,96,195
+"Journal of Solar Energy Engineering, Transactions of the ASME",6,29,0,0,6.0,96,449
+Energy Science and Engineering,6,11,0,0,6.0,96,449
+Computer Communications,6,18,0,0,6.0,96,449
+Metallurgical and Materials Transactions B: Process Metallurgy and Materials Processing Science,6,8,0,0,6.0,96,449
+Progress in Photovoltaics: Research and Applications,5,6,7,24,12.0,109,52
+Sustainable Energy Technologies and Assessments,5,5,6,30,11.0,109,60
+Process Safety and Environmental Protection,5,5,3,7,8.0,109,97
+Bioresource Technology,5,9,2,4,7.0,109,125
+World Electric Vehicle Journal,5,31,2,3,7.0,109,125
+IEEE Transactions on Microwave Theory and Techniques,5,38,1,1,6.0,109,195
+Knowledge-Based Systems,5,7,1,4,6.0,109,195
+ACM Transactions on Embedded Computing Systems,5,30,1,1,6.0,109,195
+Sustainable Computing: Informatics and Systems,5,9,1,1,6.0,109,195
+Wireless Personal Communications,5,5,0,0,5.0,109,449
+Journal of the Electrochemical Society,5,76,0,0,5.0,109,449
+CSEE Journal of Power and Energy Systems,5,5,0,0,5.0,109,449
+IEEE Transactions on Communications,5,15,0,0,5.0,109,449
+IEEE Transactions on Neural Networks and Learning Systems,5,7,0,0,5.0,109,449
+ACM Transactions on Design Automation of Electronic Systems,5,17,0,0,5.0,109,449
+Journal of Ambient Intelligence and Humanized Computing,5,5,0,0,5.0,109,449
+Journal of Micromechanics and Microengineering,5,49,0,0,5.0,109,449
+Journal of Manufacturing Processes,5,6,0,0,5.0,109,449
+IEEE Intelligent Transportation Systems Magazine,5,14,0,0,5.0,109,449
+IEEE Network,5,10,0,0,5.0,109,449
+IEEE Communications Surveys and Tutorials,5,26,0,0,5.0,109,449
+Journal of Microelectromechanical Systems,5,31,0,0,5.0,109,449
+Nature Communications ,5,11,0,0,5.0,109,449
+Journal of Marine Science and Engineering,5,5,0,0,5.0,109,449
+Journal of Cloud Computing,5,13,0,0,5.0,109,449
+Computers and Chemical Engineering,5,8,0,0,5.0,109,449
+IEEE Transactions on Multimedia,5,14,0,0,5.0,109,449
+Biomass and Bioenergy,4,7,13,140,17.0,136,30
+IEEE Journal of Photovoltaics,4,9,8,40,12.0,136,46
+Joule,4,9,8,28,12.0,136,46
+Journal of Building Performance Simulation,4,72,7,15,11.0,136,52
+Journal of Renewable and Sustainable Energy,4,4,7,16,11.0,136,52
+Wind Engineering,4,7,5,11,9.0,136,69
+International Journal of Green Energy,4,5,4,5,8.0,136,84
+Desalination and Water Treatment,4,11,3,5,7.0,136,97
+Proceedings of the IEEE,4,7,2,8,6.0,136,125
+Microprocessors and Microsystems,4,9,1,1,5.0,136,195
+Cluster Computing,4,5,1,1,5.0,136,195
+IEEE Transactions on Signal Processing,4,14,1,2,5.0,136,195
+Measurement Science and Technology,4,5,1,2,5.0,136,195
+Nano Letters,4,10,1,1,5.0,136,195
+Minerals Engineering,4,12,1,3,5.0,136,195
+IEEE/ACM Transactions on Networking,4,14,0,0,4.0,136,449
+ACS Nano,4,8,0,0,4.0,136,449
+Applied Intelligence,4,5,0,0,4.0,136,449
+Microelectronics Journal,4,10,0,0,4.0,136,449
+Proceedings of the National Academy of Sciences of the United States of America,4,14,0,0,4.0,136,449
+Journal of Electrical Engineering and Technology,4,5,0,0,4.0,136,449
+IEEE Transactions on Biomedical Engineering,4,22,0,0,4.0,136,449
+Neural Processing Letters,4,5,0,0,4.0,136,449
+Automation in Construction,4,4,0,0,4.0,136,449
+IEEE Transactions on Circuits and Systems for Video Technology,4,23,0,0,4.0,136,449
+IET Communications,4,19,0,0,4.0,136,449
+IEEE Communications Letters,4,16,0,0,4.0,136,449
+Journal of Materials Chemistry A,4,5,0,0,4.0,136,449
+Electrical Engineering,4,6,0,0,4.0,136,449
+Micromachines,4,5,0,0,4.0,136,449
+Journal of Systems Architecture,4,19,0,0,4.0,136,449
+ACM Transactions on Sensor Networks,4,10,0,0,4.0,136,449
+Environmental Research Letters,3,5,27,245,30.0,168,16
+European Journal of Operational Research,3,9,6,10,9.0,168,60
+Journal of Wind Engineering and Industrial Aerodynamics,3,7,5,13,8.0,168,69
+Nature,3,5,5,68,8.0,168,69
+Energy Systems,3,6,3,3,6.0,168,97
+Science,3,23,3,167,6.0,168,97
+Global Energy Interconnection,3,3,3,29,6.0,168,97
+Computers and Electronics in Agriculture,3,6,3,7,6.0,168,97
+Advances in Applied Energy,3,3,2,11,5.0,168,125
+Science Advances,3,6,2,2,5.0,168,125
+IEEE Journal of Selected Topics in Quantum Electronics,3,6,2,3,5.0,168,125
+Advanced Materials,3,4,1,1,4.0,168,195
+Journal of Electrical and Computer Engineering,3,5,1,1,4.0,168,195
+Solar RRL,3,7,1,1,4.0,168,195
+Biochemical Engineering Journal,3,4,1,1,4.0,168,195
+IEEE Transactions on Cloud Computing,3,5,1,1,4.0,168,195
+Journal of Water Process Engineering,3,3,1,1,4.0,168,195
+Journal of Parallel and Distributed Computing,3,6,1,2,4.0,168,195
+IET Intelligent Transport Systems,3,5,1,4,4.0,168,195
+Ad Hoc Networks,3,3,1,1,4.0,168,195
+Advanced Engineering Informatics,3,3,1,2,4.0,168,195
+Transactions on Embedded Computing Systems,3,4,0,0,3.0,168,449
+Tsinghua Science and Technology,3,8,0,0,3.0,168,449
+Advanced Energy Materials,3,6,0,0,3.0,168,449
+Environmental Progress and Sustainable Energy,3,3,0,0,3.0,168,449
+ISA Transactions,3,7,0,0,3.0,168,449
+International Journal of Distributed Sensor Networks,3,3,0,0,3.0,168,449
+International Journal of Advanced Manufacturing Technology,3,3,0,0,3.0,168,449
+Journal of Field Robotics,3,3,0,0,3.0,168,449
+IEEE Journal of Biomedical and Health Informatics,3,3,0,0,3.0,168,449
+IEEE Journal of Oceanic Engineering,3,4,0,0,3.0,168,449
+Journal of Manufacturing Systems,3,8,0,0,3.0,168,449
+Energy Engineering: Journal of the Association of Energy Engineering,3,3,0,0,3.0,168,449
+Engineering,3,3,0,0,3.0,168,449
+HVAC and R Research,3,5,0,0,3.0,168,449
+Journal of Physical Chemistry C,3,8,0,0,3.0,168,449
+Journal of Signal Processing Systems,3,13,0,0,3.0,168,449
+Energies ,3,3,0,0,3.0,168,449
+"Energy Sources, Part A: Recovery, Utilization and Environmental Effects",3,3,0,0,3.0,168,449
+Energy Exploration and Exploitation,3,3,0,0,3.0,168,449
+IEICE Transactions on Communications,3,11,0,0,3.0,168,449
+"IEEE Transactions on Systems, Man, and Cybernetics: Systems",3,6,0,0,3.0,168,449
+IEEE Transactions on Visualization and Computer Graphics,3,8,0,0,3.0,168,449
+IEICE Transactions on Electronics,3,6,0,0,3.0,168,449
+Analog Integrated Circuits and Signal Processing,3,3,0,0,3.0,168,449
+ACS Photonics,3,12,0,0,3.0,168,449
+Computer Journal,3,5,0,0,3.0,168,449
+"Proceedings of the Institution of Mechanical Engineers, Part B: Journal of Engineering Manufacture",3,4,0,0,3.0,168,449
+Advances in Mechanical Engineering,3,4,0,0,3.0,168,449
+Neural Networks,3,3,0,0,3.0,168,449
+IEEE/ASME Transactions on Mechatronics,3,3,0,0,3.0,168,449
+Pervasive and Mobile Computing,3,7,0,0,3.0,168,449
+IEEJ Transactions on Electrical and Electronic Engineering,3,5,0,0,3.0,168,449
+Wireless Networks,3,7,0,0,3.0,168,449
+Computers and Industrial Engineering,3,5,0,0,3.0,168,449
+IEEE Transactions on Magnetics,3,6,0,0,3.0,168,449
+IEEE Transactions on Knowledge and Data Engineering,3,3,0,0,3.0,168,449
+Arabian Journal for Science and Engineering,3,3,0,0,3.0,168,449
+"Proceedings of the Institution of Mechanical Engineers, Part D: Journal of Automobile Engineering",3,6,0,0,3.0,168,449
+ETRI Journal,3,3,0,0,3.0,168,449
+Energy Economics,2,81,75,518,77.0,228,7
+Energy Efficiency,2,5,13,44,15.0,228,30
+Nature Energy,2,19,11,89,13.0,228,34
+Nature Communications,2,3,11,40,13.0,228,34
+Building Services Engineering Research and Technology,2,2,8,33,10.0,228,46
+Energy Informatics,2,4,4,4,6.0,228,84
+IEEE Robotics and Automation Letters,2,2,4,6,6.0,228,84
+Case Studies in Thermal Engineering,2,2,3,3,5.0,228,97
+Journal of the American Statistical Association,2,2,3,6,5.0,228,97
+Integration,2,2,2,2,4.0,228,125
+Computer,2,30,2,2,4.0,228,125
+Journal of Computing in Civil Engineering,2,3,2,2,4.0,228,125
+Journal of Biomechanics,2,2,2,3,4.0,228,125
+"Sustainable Energy, Grids and Networks",2,2,2,9,4.0,228,125
+Electric Power Components and Systems,2,2,2,3,4.0,228,125
+Journal of the Operational Research Society,2,5,1,4,3.0,228,195
+Journal of Intelligent Material Systems and Structures,2,5,1,1,3.0,228,195
+Journal of Engineering for Gas Turbines and Power,2,2,1,1,3.0,228,195
+IBM Journal of Research and Development,2,123,1,1,3.0,228,195
+Mathematical Biosciences and Engineering,2,3,1,1,3.0,228,195
+Journal of Systems and Software,2,3,1,2,3.0,228,195
+IEEE Transactions on Device and Materials Reliability,2,3,1,2,3.0,228,195
+Applied Mathematical Modelling,2,7,1,1,3.0,228,195
+Advances in Engineering Software,2,5,1,2,3.0,228,195
+Computer Science - Research and Development,2,4,1,4,3.0,228,195
+Transportation Research Part E: Logistics and Transportation Review,2,3,1,1,3.0,228,195
+Aerospace Science and Technology,2,2,1,1,3.0,228,195
+Nuclear Engineering and Design,2,4,1,1,3.0,228,195
+Microelectronics Reliability,2,2,1,1,3.0,228,195
+Microelectronic Engineering,2,9,1,1,3.0,228,195
+Vehicular Communications,2,2,0,0,2.0,228,449
+ACM Transactions on Internet Technology,2,2,0,0,2.0,228,449
+ACM Transactions on Cyber-Physical Systems,2,3,0,0,2.0,228,449
+Indian Journal of Science and Technology,2,3,0,0,2.0,228,449
+ACM Transactions on Intelligent Systems and Technology,2,8,0,0,2.0,228,449
+Chemical Engineering and Processing - Process Intensification,2,3,0,0,2.0,228,449
+Eurasip Journal on Wireless Communications and Networking,2,3,0,0,2.0,228,449
+Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics),2,7,0,0,2.0,228,449
+CIRP Annals - Manufacturing Technology,2,4,0,0,2.0,228,449
+IEEE Journal on Selected Topics in Quantum Electronics,2,18,0,0,2.0,228,449
+Journal of Intelligent Manufacturing,2,3,0,0,2.0,228,449
+Frontiers of Information Technology and Electronic Engineering,2,2,0,0,2.0,228,449
+"Sensors (Basel, Switzerland)",2,2,0,0,2.0,228,449
+Semiconductor Science and Technology,2,2,0,0,2.0,228,449
+Journal of Network and Computer Applications,2,3,0,0,2.0,228,449
+Journal of Optical Communications and Networking,2,2,0,0,2.0,228,449
+Journal of Zhejiang University: Science C,2,2,0,0,2.0,228,449
+Forecasting,2,2,0,0,2.0,228,449
+Machine Learning,2,13,0,0,2.0,228,449
+Scientific Programming,2,2,0,0,2.0,228,449
+Future Internet,2,2,0,0,2.0,228,449
+Fusion Engineering and Design,2,2,0,0,2.0,228,449
+Entropy,2,2,0,0,2.0,228,449
+Journal of Neural Engineering,2,5,0,0,2.0,228,449
+"Integration, the VLSI Journal",2,3,0,0,2.0,228,449
+International Journal of Advanced Computer Science and Applications,2,13,0,0,2.0,228,449
+International Journal of Aeronautical and Space Sciences,2,2,0,0,2.0,228,449
+Transactions on Architecture and Code Optimization,2,7,0,0,2.0,228,449
+Simulation Modelling Practice and Theory,2,2,0,0,2.0,228,449
+Studies in Computational Intelligence,2,2,0,0,2.0,228,449
+Soft Computing,2,2,0,0,2.0,228,449
+Microsystem Technologies,2,3,0,0,2.0,228,449
+Real-Time Systems,2,3,0,0,2.0,228,449
+"Circuits, Systems, and Signal Processing",2,3,0,0,2.0,228,449
+Electronics Letters,2,2,0,0,2.0,228,449
+Journal of Computer Science and Technology,2,5,0,0,2.0,228,449
+Electronic Research Archive,2,2,0,0,2.0,228,449
+IEEE Journal of Quantum Electronics,2,6,0,0,2.0,228,449
+Journal of Electronic Packaging,2,6,0,0,2.0,228,449
+IEEE Signal Processing Magazine,2,6,0,0,2.0,228,449
+Mechanical Systems and Signal Processing,2,3,0,0,2.0,228,449
+IEEE Journal on Emerging and Selected Topics in Circuits and Systems,2,6,0,0,2.0,228,449
+Electrical Engineering in Japan (English translation of Denki Gakkai Ronbunshi),2,2,0,0,2.0,228,449
+Optik,2,3,0,0,2.0,228,449
+IEEE Transactions on Neural Systems and Rehabilitation Engineering,2,4,0,0,2.0,228,449
+International Journal of Robotics Research,2,2,0,0,2.0,228,449
+Applied Engineering in Agriculture,2,2,0,0,2.0,228,449
+IEEE Transactions on Intelligent Vehicles,2,3,0,0,2.0,228,449
+IEEE Transactions on Cybernetics,2,22,0,0,2.0,228,449
+"IEEE Transactions on Components, Packaging and Manufacturing Technology",2,3,0,0,2.0,228,449
+IEEE Transactions on Circuits and Systems II: Analog and Digital Signal Processing,2,25,0,0,2.0,228,449
+Ionics,2,2,0,0,2.0,228,449
+"Computers, Materials and Continua",2,2,0,0,2.0,228,449
+CES Transactions on Electrical Machines and Systems,2,4,0,0,2.0,228,449
+Drones,2,2,0,0,2.0,228,449
+Computing,2,2,0,0,2.0,228,449
+IEEE Transactions on Applied Superconductivity,2,2,0,0,2.0,228,449
+Journal of Communications and Networks,2,4,0,0,2.0,228,449
+Computers in Industry,2,29,0,0,2.0,228,449
+Omega (United Kingdom),2,2,0,0,2.0,228,449
+IET Computers and Digital Techniques,2,15,0,0,2.0,228,449
+"IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control",2,10,0,0,2.0,228,449
+IEEE Transactions on Services Computing,2,3,0,0,2.0,228,449
+International Journal of Photoenergy,2,4,0,0,2.0,228,449
+International Journal of Numerical Methods for Heat and Fluid Flow,2,3,0,0,2.0,228,449
+Computers,2,2,0,0,2.0,228,449
+IEEE Transactions on Network Science and Engineering,2,6,0,0,2.0,228,449
+ACM Transactions on Autonomous and Adaptive Systems,2,4,0,0,2.0,228,449
+ACM Transactions on Computer Systems,2,20,0,0,2.0,228,449
+Information (Switzerland),2,2,0,0,2.0,228,449
+Technologies,2,3,0,0,2.0,228,449
+Transactions on emerging telecommunications technologies,2,2,0,0,2.0,228,449
+Information Sciences,2,2,0,0,2.0,228,449
+Innovative Food Science and Emerging Technologies,2,4,0,0,2.0,228,449
+Utilities Policy,1,1,7,23,8.0,332,52
+International Journal of Global Energy Issues,1,2,6,26,7.0,332,60
+Water Resources Management,1,1,5,11,6.0,332,69
+Geothermics,1,1,5,14,6.0,332,69
+IEEE Power and Energy Magazine,1,2,4,8,5.0,332,84
+Journal of Advanced Transportation,1,4,4,13,5.0,332,84
+Tribology International,1,7,3,23,4.0,332,97
+Heliyon,1,1,3,3,4.0,332,97
+International Journal of Coal Geology,1,3,2,4,3.0,332,125
+Chemical Engineering and Processing: Process Intensification,1,1,2,2,3.0,332,125
+Energy Conversion and Management: X,1,1,2,2,3.0,332,125
+Energy and AI,1,1,2,3,3.0,332,125
+Science and Technology for the Built Environment,1,1,2,2,3.0,332,125
+Fuel Processing Technology,1,3,2,5,3.0,332,125
+Energy and Built Environment,1,1,2,3,3.0,332,125
+Journal of Petroleum Science and Engineering,1,1,2,4,3.0,332,125
+Journal of Natural Gas Science and Engineering,1,2,2,3,3.0,332,125
+Journal of Mechanical Science and Technology,1,1,2,3,3.0,332,125
+"Proceedings of the Institution of Mechanical Engineers, Part A: Journal of Power and Energy",1,1,2,3,3.0,332,125
+Plasma Physics and Controlled Fusion,1,1,2,3,3.0,332,125
+Algorithms,1,1,2,3,3.0,332,125
+Journal of Atmospheric and Oceanic Technology,1,3,2,7,3.0,332,125
+IEEE Transactions on Information Forensics and Security,1,5,2,2,3.0,332,125
+Transportation Research Part C: Emerging Technologies,1,1,2,3,3.0,332,125
+Omega,1,42,2,6,3.0,332,125
+Renewable Energy and Power Quality Journal,1,1,2,2,3.0,332,125
+Bell Labs Technical Journal,1,3,2,4,3.0,332,125
+Annals of Operations Research,1,1,2,2,3.0,332,125
+Energy Technology,1,1,1,2,2.0,332,195
+Rock Mechanics and Rock Engineering,1,1,1,4,2.0,332,195
+IET Wireless Sensor Systems,1,108,1,2,2.0,332,195
+International Journal of Electronics,1,1,1,1,2.0,332,195
+IEEE Control Systems,1,129,1,3,2.0,332,195
+IEEE Electrification Magazine,1,1,1,7,2.0,332,195
+Biomedical Microdevices,1,6,1,1,2.0,332,195
+Biosystems Engineering,1,2,1,5,2.0,332,195
+Biomass Conversion and Biorefinery,1,4,1,2,2.0,332,195
+Fuel Cells,1,1,1,1,2.0,332,195
+Heat Transfer Engineering,1,2,1,1,2.0,332,195
+Sensors and Actuators B: Chemical,1,2,1,1,2.0,332,195
+Journal of Nuclear Materials,1,6,1,1,2.0,332,195
+Journal of Water Resources Planning and Management,1,1,1,1,2.0,332,195
+Bioinformatics,1,2,1,1,2.0,332,195
+Materials Science and Engineering: A,1,1,1,2,2.0,332,195
+Fusion Technology,1,1,1,6,2.0,332,195
+Journal of Propulsion and Power,1,2,1,2,2.0,332,195
+IET Software,1,4,1,1,2.0,332,195
+SN Computer Science,1,1,1,1,2.0,332,195
+Protection and Control of Modern Power Systems,1,1,1,3,2.0,332,195
+Meccanica,1,3,1,1,2.0,332,195
+Patterns,1,1,1,2,2.0,332,195
+International Journal of Thermal Sciences,1,1,1,1,2.0,332,195
+Sustainable Materials and Technologies,1,1,1,1,2.0,332,195
+Inventions,1,1,1,1,2.0,332,195
+Sustainable Production and Consumption,1,1,1,1,2.0,332,195
+Swarm and Evolutionary Computation,1,1,1,1,2.0,332,195
+Computer-Aided Civil and Infrastructure Engineering,1,1,1,1,2.0,332,195
+EPJ Data Science,1,2,1,3,2.0,332,195
+Nature Sustainability,1,4,1,2,2.0,332,195
+Nuclear Technology,1,1,1,1,2.0,332,195
+"IEEJ Transactions on Electronics, Information and Systems",1,3,1,4,2.0,332,195
+IEEJ Transactions on Power and Energy,1,8,1,2,2.0,332,195
+International Journal of Molecular Sciences,1,3,1,4,2.0,332,195
+IEEE Transactions on Multi-Scale Computing Systems,1,6,1,1,2.0,332,195
+Advances in Space Research,1,1,1,3,2.0,332,195
+Alexandria Engineering Journal,1,7,1,1,2.0,332,195
+Performance Evaluation,1,3,1,1,2.0,332,195
+Power Engineering Journal,1,10,1,1,2.0,332,195
+ACM Journal on Emerging Technologies in Computing Systems,1,1,1,1,2.0,332,195
+Systems and Soft Computing,1,2,1,1,2.0,332,195
+Transportation Research Part B: Methodological,1,1,1,1,2.0,332,195
+npj Computational Materials,1,1,0,0,1.0,332,449
+ACM Computing Surveys,1,1,0,0,1.0,332,449
+ACM SIGPLAN Notices,1,3,0,0,1.0,332,449
+ACM Transactions on Information Systems,1,2,0,0,1.0,332,449
+ACM Transactions on Internet of Things,1,1,0,0,1.0,332,449
+"ACM Transactions on Multimedia Computing, Communications and Applications",1,25,0,0,1.0,332,449
+Tunnelling and Underground Space Technology,1,1,0,0,1.0,332,449
+AIAA Journal,1,11,0,0,1.0,332,449
+ACS Sustainable Chemistry and Engineering,1,1,0,0,1.0,332,449
+ACS Energy Letters,1,2,0,0,1.0,332,449
+ACM Transactions on Storage,1,1,0,0,1.0,332,449
+Annals of Nuclear Energy,1,1,0,0,1.0,332,449
+Annals of Biomedical Engineering,1,2,0,0,1.0,332,449
+Advances in Materials Science and Engineering,1,1,0,0,1.0,332,449
+Advances in Manufacturing,1,1,0,0,1.0,332,449
+Advances in Intelligent Systems and Computing,1,1,0,0,1.0,332,449
+Advances in Building Energy Research,1,3,0,0,1.0,332,449
+Advanced Materials Technologies,1,1,0,0,1.0,332,449
+Systems Science and Control Engineering,1,1,0,0,1.0,332,449
+IET Energy Systems Integration,1,1,0,0,1.0,332,449
+IET Electrical Systems in Transportation,1,1,0,0,1.0,332,449
+"IET Circuits, Devices and Systems",1,1,0,0,1.0,332,449
+IEEE Wireless Communications Letters,1,1,0,0,1.0,332,449
+IEEE Vehicular Technology Magazine,1,1,0,0,1.0,332,449
+Indonesian Journal of Electrical Engineering and Computer Science,1,1,0,0,1.0,332,449
+INFORMS Journal on Applied Analytics,1,1,0,0,1.0,332,449
+International Journal of Electrical and Computer Engineering,1,1,0,0,1.0,332,449
+"International Journal of Control, Automation and Systems",1,1,0,0,1.0,332,449
+International Journal of Communication Systems,1,1,0,0,1.0,332,449
+International Journal of Mechanical Sciences,1,2,0,0,1.0,332,449
+International Journal of Manufacturing Research,1,1,0,0,1.0,332,449
+International Journal of Machine Learning and Cybernetics,1,1,0,0,1.0,332,449
+IEEE Transactions on Terahertz Science and Technology,1,2,0,0,1.0,332,449
+"IEEE Transactions on Systems, Man and Cybernetics Part C: Applications and Reviews",1,2,0,0,1.0,332,449
+IEEE Transactions on Sustainable Computing,1,6,0,0,1.0,332,449
+IEEE Transactions on Software Engineering,1,2,0,0,1.0,332,449
+IEEE Transactions on Quantum Engineering,1,2,0,0,1.0,332,449
+International Journal of Intelligent Robotics and Applications,1,1,0,0,1.0,332,449
+International Journal of Information Security and Privacy,1,1,0,0,1.0,332,449
+International Journal of Information Management,1,14,0,0,1.0,332,449
+International Journal of Energy Technology and Policy,1,28,0,0,1.0,332,449
+"International Journal of Turbomachinery, Propulsion and Power",1,1,0,0,1.0,332,449
+International Journal of Solids and Structures,1,1,0,0,1.0,332,449
+International Journal of Robust and Nonlinear Control,1,2,0,0,1.0,332,449
+IEEE Transactions on Pattern Analysis and Machine Intelligence,1,1,0,0,1.0,332,449
+IEEE Transactions on Nuclear Science,1,1,0,0,1.0,332,449
+IEEE Transactions on Nanobioscience,1,2,0,0,1.0,332,449
+International Journal of Reconfigurable Computing,1,2,0,0,1.0,332,449
+International Journal of Precision Engineering and Manufacturing,1,2,0,0,1.0,332,449
+"International Journal of Modelling, Identification and Control",1,1,0,0,1.0,332,449
+International Journal of Modelling and Simulation,1,1,0,0,1.0,332,449
+International Journal of Mechatronics and Manufacturing Systems,1,1,0,0,1.0,332,449
+Japanese Journal of Applied Physics,1,1,0,0,1.0,332,449
+JOM,1,1,0,0,1.0,332,449
+IEEE Transactions on Emerging Topics in Computational Intelligence,1,2,0,0,1.0,332,449
+IEEE Transactions on Electromagnetic Compatibility,1,1,0,0,1.0,332,449
+IEEE Transactions on Dielectrics and Electrical Insulation,1,1,0,0,1.0,332,449
+IEEE Transactions on Image Processing,1,2,0,0,1.0,332,449
+IEEE Transactions on Human-Machine Systems,1,5,0,0,1.0,332,449
+IEEE Transactions on Evolutionary Computation,1,1,0,0,1.0,332,449
+IEEE Transactions on Engineering Management,1,1,0,0,1.0,332,449
+IEEE Transactions on Emerging Topics in Computing,1,1,0,0,1.0,332,449
+Internet of Things (Netherlands),1,1,0,0,1.0,332,449
+International Transactions on Electrical Energy Systems,1,1,0,0,1.0,332,449
+International Marine Energy Journal,1,2,0,0,1.0,332,449
+International Journal on Interactive Design and Manufacturing,1,1,0,0,1.0,332,449
+Journal of Bioinformatics and Computational Biology,1,1,0,0,1.0,332,449
+IEEE Transactions on Autonomous Mental Development,1,7,0,0,1.0,332,449
+IEEE Transactions on Antennas and Propagation,1,4,0,0,1.0,332,449
+IEEE Spectrum,1,1,0,0,1.0,332,449
+IEEE Signal Processing Letters,1,5,0,0,1.0,332,449
+IEEE Reviews in Biomedical Engineering,1,4,0,0,1.0,332,449
+Journal of Artificial Intelligence Research,1,1,0,0,1.0,332,449
+Journal of Applied Research and Technology,1,1,0,0,1.0,332,449
+"Journal of Applied Mechanics, Transactions ASME",1,1,0,0,1.0,332,449
+Journal of Algorithms and Computational Technology,1,1,0,0,1.0,332,449
+Journal of Aerospace Engineering,1,1,0,0,1.0,332,449
+Journal of Advanced Computational Intelligence and Intelligent Informatics,1,1,0,0,1.0,332,449
+Journal of Achievements in Materials and Manufacturing Engineering,1,1,0,0,1.0,332,449
+Journal of Control Theory and Applications,1,1,0,0,1.0,332,449
+Journal of Constructional Steel Research,1,1,0,0,1.0,332,449
+Journal of Computing Science and Engineering,1,1,0,0,1.0,332,449
+Journal of Computer Networks and Communications,1,2,0,0,1.0,332,449
+Journal of Computational Science,1,1,0,0,1.0,332,449
+Journal of Computational Methods in Sciences and Engineering,1,1,0,0,1.0,332,449
+"Journal of Circuits, Systems and Computers",1,15,0,0,1.0,332,449
+Journal of Chemical Technology and Biotechnology,1,2,0,0,1.0,332,449
+Journal of Cases on Information Technology,1,1,0,0,1.0,332,449
+Journal of Biomedical Materials Research - Part A,1,2,0,0,1.0,332,449
+Journal of Biomechanical Engineering,1,25,0,0,1.0,332,449
+Journal of Environmental Chemical Engineering,1,1,0,0,1.0,332,449
+"Journal of Energy Resources Technology, Transactions of the ASME",1,3,0,0,1.0,332,449
+IEEE Photonics Journal,1,3,0,0,1.0,332,449
+IEEE Open Journal of the Communications Society,1,2,0,0,1.0,332,449
+IEEE Open Journal of Vehicular Technology,1,5,0,0,1.0,332,449
+IEEE Microwave Magazine,1,1,0,0,1.0,332,449
+IEEE Latin America Transactions,1,1,0,0,1.0,332,449
+IEEE Journal of the Electron Devices Society,1,2,0,0,1.0,332,449
+Journal of Energy Chemistry,1,1,0,0,1.0,332,449
+Journal of Electronic Testing: Theory and Applications (JETTA),1,1,0,0,1.0,332,449
+Journal of Electronic Materials,1,1,0,0,1.0,332,449
+Journal of Display Technology,1,1,0,0,1.0,332,449
+Journal of King Saud University - Computer and Information Sciences,1,1,0,0,1.0,332,449
+Journal of Intelligent and Robotic Systems: Theory and Applications,1,1,0,0,1.0,332,449
+Journal of Intelligent and Fuzzy Systems,1,1,0,0,1.0,332,449
+Journal of Intelligent Information Systems,1,1,0,0,1.0,332,449
+IEEE Embedded Systems Letters,1,9,0,0,1.0,332,449
+IEEE Electron Device Letters,1,1,0,0,1.0,332,449
+IEEE Design and Test,1,1,0,0,1.0,332,449
+IEEE Control Systems Magazine,1,1,0,0,1.0,332,449
+IEEE Control Systems Letters,1,1,0,0,1.0,332,449
+IEEE Computer Architecture Letters,1,11,0,0,1.0,332,449
+Journal of Integrated Circuits and Systems,1,1,0,0,1.0,332,449
+Journal of Industrial Information Integration,1,1,0,0,1.0,332,449
+Journal of Heat Transfer,1,2,0,0,1.0,332,449
+Journal of Fluids and Structures,1,1,0,0,1.0,332,449
+Fundamental Research,1,1,0,0,1.0,332,449
+IEEE Canadian Journal of Electrical and Computer Engineering,1,4,0,0,1.0,332,449
+IEEE Antennas and Wireless Propagation Letters,1,4,0,0,1.0,332,449
+"IEE Proceedings: Circuits, Devices and Systems",1,3,0,0,1.0,332,449
+IEE Conference Publication,1,4,0,0,1.0,332,449
+Hydrometallurgy,1,7,0,0,1.0,332,449
+"Journal of Medical Devices, Transactions of the ASME",1,13,0,0,1.0,332,449
+Journal of Materials Science,1,1,0,0,1.0,332,449
+Experimental Thermal and Fluid Science,1,2,0,0,1.0,332,449
+Experimental Heat Transfer,1,1,0,0,1.0,332,449
+Journal of Statistics Applications and Probability,1,1,0,0,1.0,332,449
+Journal of Sensors,1,1,0,0,1.0,332,449
+Journal of Sensor and Actuator Networks,1,1,0,0,1.0,332,449
+Journal of Sandwich Structures and Materials,1,1,0,0,1.0,332,449
+Journal of Robotics and Control (JRC),1,1,0,0,1.0,332,449
+Journal of Real-Time Image Processing,1,1,0,0,1.0,332,449
+"Journal of Pressure Vessel Technology, Transactions of the ASME",1,1,0,0,1.0,332,449
+Journal of Nuclear Engineering and Radiation Science,1,1,0,0,1.0,332,449
+Green Energy and Technology,1,1,0,0,1.0,332,449
+Journal of Terramechanics,1,1,0,0,1.0,332,449
+Journal of Systems Science and Complexity,1,1,0,0,1.0,332,449
+Frontiers of Electrical and Electronic Engineering in China,1,1,0,0,1.0,332,449
+Frontiers of Architectural Research,1,2,0,0,1.0,332,449
+Frontiers in Physics,1,1,0,0,1.0,332,449
+Frontiers in Neuroinformatics,1,1,0,0,1.0,332,449
+Frontiers in Marine Science,1,1,0,0,1.0,332,449
+Fatigue and Fracture of Engineering Materials and Structures,1,1,0,0,1.0,332,449
+Extreme Mechanics Letters,1,1,0,0,1.0,332,449
+Journal of the Franklin Institute,1,1,0,0,1.0,332,449
+European Transactions on Electrical Power,1,1,0,0,1.0,332,449
+Eurasip Journal on Applied Signal Processing,1,1,0,0,1.0,332,449
+Environmental Modelling and Software,1,2,0,0,1.0,332,449
+Engineering with Computers,1,7,0,0,1.0,332,449
+"Engineering Science and Technology, an International Journal",1,1,0,0,1.0,332,449
+Journal of Vibration Engineering and Technologies,1,1,0,0,1.0,332,449
+Journal of Thermal Science and Engineering Applications,1,1,0,0,1.0,332,449
+Machine Learning with Applications,1,1,0,0,1.0,332,449
+Engineering Research Express,1,1,0,0,1.0,332,449
+Engineering Journal,1,1,0,0,1.0,332,449
+Engineering Fracture Mechanics,1,1,0,0,1.0,332,449
+Energy and Environment,1,1,0,0,1.0,332,449
+Lighting Research and Technology,1,7,0,0,1.0,332,449
+Lecture Notes in Electrical Engineering,1,2,0,0,1.0,332,449
+Key Engineering Materials,1,4,0,0,1.0,332,449
+KSCE Journal of Civil Engineering,1,1,0,0,1.0,332,449
+Journal of the Royal Statistical Society. Series C: Applied Statistics,1,1,0,0,1.0,332,449
+Energetika,1,1,0,0,1.0,332,449
+Energy Materials: Materials Science and Engineering for Energy Systems,1,5,0,0,1.0,332,449
+Energy Journal,1,3,0,0,1.0,332,449
+Mathematics and Financial Economics,1,1,0,0,1.0,332,449
+Materials and Design,1,2,0,0,1.0,332,449
+Materials Science and Engineering: B,1,6,0,0,1.0,332,449
+Multiagent and Grid Systems,1,1,0,0,1.0,332,449
+Molecular Simulation,1,2,0,0,1.0,332,449
+Mobile Information Systems,1,5,0,0,1.0,332,449
+Electricity Journal,1,2,0,0,1.0,332,449
+Microsystems and Nanoengineering,1,1,0,0,1.0,332,449
+Microporous and Mesoporous Materials,1,2,0,0,1.0,332,449
+Metrology and Measurement Systems,1,1,0,0,1.0,332,449
+Mechanical Sciences,1,1,0,0,1.0,332,449
+Measurement and Control (United Kingdom),1,1,0,0,1.0,332,449
+EAI Endorsed Transactions on Scalable Information Systems,1,1,0,0,1.0,332,449
+Dynamics,1,1,0,0,1.0,332,449
+Digital Signal Processing: A Review Journal,1,1,0,0,1.0,332,449
+Decision Support Systems,1,2,0,0,1.0,332,449
+Data Mining and Knowledge Discovery,1,1,0,0,1.0,332,449
+Construction and Building Materials,1,1,0,0,1.0,332,449
+Conference Proceedings - IEEE Applied Power Electronics Conference and Exposition - APEC,1,1,0,0,1.0,332,449
+Concurrency and Computation: Practice and Experience,1,2,0,0,1.0,332,449
+Nature Biomedical Engineering,1,1,0,0,1.0,332,449
+Nanotechnology,1,5,0,0,1.0,332,449
+Nano-Micro Letters,1,1,0,0,1.0,332,449
+NDT and E International,1,3,0,0,1.0,332,449
+Multimedia Systems,1,7,0,0,1.0,332,449
+Optical Engineering,1,3,0,0,1.0,332,449
+Oil and Gas Science and Technology,1,1,0,0,1.0,332,449
+Computers in Biology and Medicine,1,1,0,0,1.0,332,449
+Computers and Mathematics with Applications,1,2,0,0,1.0,332,449
+Computers and Electrical Engineering,1,2,0,0,1.0,332,449
+Computer Systems Science and Engineering,1,5,0,0,1.0,332,449
+Computer Standards and Interfaces,1,2,0,0,1.0,332,449
+Nature Reviews Materials,1,2,0,0,1.0,332,449
+Nature Nanotechnology,1,3,0,0,1.0,332,449
+Nature Materials,1,6,0,0,1.0,332,449
+Performance Evaluation Review,1,1,0,0,1.0,332,449
+Computer Communication Review,1,4,0,0,1.0,332,449
+Computer Aided Chemical Engineering,1,1,0,0,1.0,332,449
+Computational and Mathematical Methods in Medicine,1,1,0,0,1.0,332,449
+Computational Statistics and Data Analysis,1,1,0,0,1.0,332,449
+Computational Materials Science,1,2,0,0,1.0,332,449
+Computational Intelligence and Neuroscience,1,84,0,0,1.0,332,449
+PeerJ Computer Science,1,2,0,0,1.0,332,449
+Peer-to-Peer Networking and Applications,1,1,0,0,1.0,332,449
+Pattern Recognition,1,1,0,0,1.0,332,449
+Optimal Control Applications and Methods,1,1,0,0,1.0,332,449
+Production Engineering,1,2,0,0,1.0,332,449
+Proceedings of the VLDB Endowment,1,7,0,0,1.0,332,449
+Proceedings of the Internatoinal Conference on Parallel and Distributed Systems - ICPADS,1,2,0,0,1.0,332,449
+Proceedings of the International Symposium on System Synthesis,1,1,0,0,1.0,332,449
+Proceedings of the Institution of Mechanical Engineers. Part I: Journal of Systems and Control Engineering,1,1,0,0,1.0,332,449
+"Proceedings of the Institution of Mechanical Engineers, Part J: Journal of Engineering Tribology",1,1,0,0,1.0,332,449
+Proceedings of the IEEE International Conference on VLSI Design,1,1,0,0,1.0,332,449
+Proceedings of the Combustion Institute,1,1,0,0,1.0,332,449
+Precision Engineering,1,1,0,0,1.0,332,449
+Polish Maritime Research,1,1,0,0,1.0,332,449
+Physical Communication,1,1,0,0,1.0,332,449
+Reliability Engineering and System Safety,1,1,0,0,1.0,332,449
+Recent Patents on Mechanical Engineering,1,6,0,0,1.0,332,449
+Composites Part B: Engineering,1,2,0,0,1.0,332,449
+Complexity,1,1,0,0,1.0,332,449
+Complex and Intelligent Systems,1,1,0,0,1.0,332,449
+Combustion and Flame,1,1,0,0,1.0,332,449
+Civil Engineering and Architecture,1,2,0,0,1.0,332,449
+Chinese Journal of Mechanical Engineering (English Edition),1,2,0,0,1.0,332,449
+China Communications,1,1,0,0,1.0,332,449
+Chemical Engineering and Technology,1,1,0,0,1.0,332,449
+Chemical Engineering and Processing,1,8,0,0,1.0,332,449
+ChemSusChem,1,2,0,0,1.0,332,449
+Canadian Geotechnical Journal,1,1,0,0,1.0,332,449
+CMES - Computer Modeling in Engineering and Sciences,1,1,0,0,1.0,332,449
+Robotics and Computer-Integrated Manufacturing,1,1,0,0,1.0,332,449
+Robotics,1,1,0,0,1.0,332,449
+Robotica,1,1,0,0,1.0,332,449
+Results in Engineering,1,1,0,0,1.0,332,449
+"Signal, Image and Video Processing",1,3,0,0,1.0,332,449
+"Sensors and Actuators, B: Chemical",1,3,0,0,1.0,332,449
+Security and Communication Networks,1,1,0,0,1.0,332,449
+Biotechnology for Biofuels,1,1,0,0,1.0,332,449
+Scripta Materialia,1,10,0,0,1.0,332,449
+Scientific Data,1,1,0,0,1.0,332,449
+Science and Technology for Energy Transition (STET),1,1,0,0,1.0,332,449
+Science Bulletin,1,1,0,0,1.0,332,449
+"SPE Projects, Facilities and Construction",1,1,0,0,1.0,332,449
+SPE Production and Operations,1,2,0,0,1.0,332,449
+Russian Microelectronics,1,1,0,0,1.0,332,449
+Autonomous Intelligent Systems,1,1,0,0,1.0,332,449
+Automatica,1,1,0,0,1.0,332,449
+Asian Journal of Control,1,1,0,0,1.0,332,449
+Smart and Sustainable Manufacturing Systems,1,1,0,0,1.0,332,449
+Symmetry,1,1,0,0,1.0,332,449
+Applied Mathematics and Nonlinear Sciences,1,1,0,0,1.0,332,449
+Annual IEEE Semiconductor Thermal Measurement and Management Symposium,1,2,0,0,1.0,332,449
+Superlattices and Microstructures,1,1,0,0,1.0,332,449
+Superconductor Science and Technology,1,2,0,0,1.0,332,449
+Supercomputing Frontiers and Innovations,1,2,0,0,1.0,332,449
+Structures,1,1,0,0,1.0,332,449
+Structural Control and Health Monitoring,1,2,0,0,1.0,332,449
+Source Code for Biology and Medicine,1,1,0,0,1.0,332,449
+Vehicle System Dynamics,1,1,0,0,1.0,332,449
+Wood Science and Technology,1,2,0,0,1.0,332,449
+Transportation Research Record,1,1,0,0,1.0,332,449
+Thermal Engineering ,1,2,0,0,1.0,332,449
+Additive Manufacturing,1,1,0,0,1.0,332,449
+Actuators,1,1,0,0,1.0,332,449
+International Journal of Circuit Theory and Applications,1,1,0,0,1.0,332,449
+International Journal of Bifurcation and Chaos,1,1,0,0,1.0,332,449
+International Journal of Antennas and Propagation,1,1,0,0,1.0,332,449
+International Journal of Advancements in Computing Technology,1,1,0,0,1.0,332,449
+International Journal of Advanced Robotic Systems,1,1,0,0,1.0,332,449
+International Journal of Adaptive Control and Signal Processing,1,4,0,0,1.0,332,449
+Intelligent and Converged Networks,1,1,0,0,1.0,332,449
+Intelligent Automation and Soft Computing,1,7,0,0,1.0,332,449
+Innovative Infrastructure Solutions,1,1,0,0,1.0,332,449
+Information and Software Technology,1,2,0,0,1.0,332,449
+"2011 3rd IEEE International Memory Workshop, IMW 2011",1,3,0,0,1.0,332,449
+Sustainability,0,0,57,198,57.0,684,10
+PLOS ONE,0,0,23,163,23.0,684,19
+Proceedings of the National Academy of Sciences,0,0,16,276,16.0,684,23
+Energy for Sustainable Development,0,0,15,81,15.0,684,25
+Building Research & Information,0,0,15,109,15.0,684,25
+Applied Sciences,0,0,14,27,14.0,684,28
+Energy Research & Social Science,0,0,13,112,13.0,684,30
+Transportation Research Part A: Policy and Practice,0,0,11,251,11.0,684,34
+Transportation Research Record: Journal of the Transportation Research Board,0,0,11,33,11.0,684,34
+The Energy Journal,0,0,10,137,10.0,684,40
+Energy Strategy Reviews,0,0,10,290,10.0,684,40
+Energy Environ. Sci.,0,0,9,25,9.0,684,43
+The Electricity Journal,0,0,9,35,9.0,684,43
+International Journal of Electrical Power & Energy Systems,0,0,7,11,7.0,684,52
+Lighting Research & Technology,0,0,6,9,6.0,684,60
+Energy & Environment,0,0,6,13,6.0,684,60
+Wind Energy Science,0,0,6,15,6.0,684,60
+Journal of Energy in Southern Africa,0,0,6,25,6.0,684,60
+Energy & Fuels,0,0,5,10,5.0,684,69
+GCB Bioenergy,0,0,5,38,5.0,684,69
+Energy Engineering,0,0,5,6,5.0,684,69
+International Journal of Energy Sector Management,0,0,4,5,4.0,684,84
+Electronics,0,0,4,5,4.0,684,84
+Risk Analysis,0,0,4,22,4.0,684,84
+HVAC&R Research,0,0,4,4,4.0,684,84
+Journal of Solar Energy Engineering,0,0,4,6,4.0,684,84
+Industrial & Engineering Chemistry Research,0,0,3,17,3.0,684,97
+Journal of Green Building,0,0,3,8,3.0,684,97
+Geoscientific Model Development,0,0,3,9,3.0,684,97
+Environmental Modelling & Software,0,0,3,19,3.0,684,97
+"Energy Sources, Part B: Economics, Planning, and Policy",0,0,3,5,3.0,684,97
+"Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",0,0,3,7,3.0,684,97
+Computers & Chemical Engineering,0,0,3,7,3.0,684,97
+Economics of Energy & Environmental Policy,0,0,3,18,3.0,684,97
+Information,0,0,2,2,2.0,684,125
+Environmental Research: Infrastructure and Sustainability,0,0,2,17,2.0,684,125
+Environmental and Ecological Statistics,0,0,2,3,2.0,684,125
+International Journal of Ambient Energy,0,0,2,2,2.0,684,125
+Journal of Energy Engineering,0,0,2,4,2.0,684,125
+Journal of Forecasting,0,0,2,6,2.0,684,125
+Energy Science & Engineering,0,0,2,2,2.0,684,125
+Energy Exploration & Exploitation,0,0,2,2,2.0,684,125
+"Energy, Ecology and Environment",0,0,2,2,2.0,684,125
+"Biofuels, Bioproducts and Biorefining",0,0,2,17,2.0,684,125
+Thermal Engineering,0,0,2,4,2.0,684,125
+Socio-Economic Planning Sciences,0,0,2,3,2.0,684,125
+Archives of Computational Methods in Engineering,0,0,2,3,2.0,684,125
+Reliability Engineering & System Safety,0,0,2,14,2.0,684,125
+Cleaner Engineering and Technology,0,0,2,5,2.0,684,125
+Ecological Indicators,0,0,2,2,2.0,684,125
+International Journal of Sustainable Energy Planning and Management,0,0,2,5,2.0,684,125
+International Review of Electrical Engineering (IREE),0,0,2,2,2.0,684,125
+Networks and Spatial Economics,0,0,2,11,2.0,684,125
+Computers & Industrial Engineering,0,0,2,3,2.0,684,125
+Nuclear Engineering and Technology,0,0,2,2,2.0,684,125
+ACS Sustainable Chemistry & Engineering,0,0,2,3,2.0,684,125
+International Journal of Energy and Environmental Engineering,0,0,2,3,2.0,684,125
+Computers & Geosciences,0,0,2,4,2.0,684,125
+International Journal of Renewable Energy Development,0,0,2,3,2.0,684,125
+International Journal of Production Economics,0,0,2,4,2.0,684,125
+Information Fusion,0,0,2,2,2.0,684,125
+Information Processing in Agriculture,0,0,2,6,2.0,684,125
+ACM Transactions on Management Information Systems,0,0,1,1,1.0,684,195
+Unconventional Resources,0,0,1,1,1.0,684,195
+ASME Journal of Engineering for Sustainable Buildings and Cities,0,0,1,1,1.0,684,195
+AEU - International Journal of Electronics and Communications,0,0,1,1,1.0,684,195
+The Annals of Applied Statistics,0,0,1,2,1.0,684,195
+The Aeronautical Journal,0,0,1,1,1.0,684,195
+"IET Generation, Transmission & Distribution",0,0,1,1,1.0,684,195
+Indoor Air,0,0,1,26,1.0,684,195
+ISIJ International,0,0,1,1,1.0,684,195
+IET Smart Grid,0,0,1,1,1.0,684,195
+International Journal of Energy Economics and Policy,0,0,1,3,1.0,684,195
+International Journal of Computer Mathematics,0,0,1,3,1.0,684,195
+International Journal of Industrial Organization,0,0,1,1,1.0,684,195
+International Journal of GEOMATE,0,0,1,1,1.0,684,195
+International Journal of Enterprise Network Management,0,0,1,2,1.0,684,195
+International Journal of Energy Production and Management,0,0,1,1,1.0,684,195
+International Journal of System Assurance Engineering and Management,0,0,1,2,1.0,684,195
+International Journal of Sustainable Energy,0,0,1,3,1.0,684,195
+International Journal of Sustainable Building Technology and Urban Development,0,0,1,4,1.0,684,195
+International Journal of Precision Engineering and Manufacturing-Green Technology,0,0,1,5,1.0,684,195
+International Journal of Mining Science and Technology,0,0,1,1,1.0,684,195
+IEEE Transactions on Geoscience and Remote Sensing,0,0,1,3,1.0,684,195
+Internet of Things,0,0,1,1,1.0,684,195
+IEEE Technology and Society Magazine,0,0,1,1,1.0,684,195
+Journal of Alloys and Compounds,0,0,1,2,1.0,684,195
+Journal of Algorithms & Computational Technology,0,0,1,1,1.0,684,195
+Journal of Cultural Heritage,0,0,1,1,1.0,684,195
+Journal of Computational and Graphical Statistics,0,0,1,3,1.0,684,195
+Journal of Computational Physics,0,0,1,3,1.0,684,195
+Journal of Coal Science and Engineering (China),0,0,1,3,1.0,684,195
+"Journal of Cloud Computing: Advances, Systems and Applications",0,0,1,1,1.0,684,195
+"Journal of Engineering, Design and Technology",0,0,1,1,1.0,684,195
+Journal of Energy Resources Technology,0,0,1,2,1.0,684,195
+IEEE Power Engineering Review,0,0,1,1,1.0,684,195
+IEEE Micro,0,0,1,2,1.0,684,195
+IEEE Communications Surveys & Tutorials,0,0,1,5,1.0,684,195
+Journal of Hydrologic Engineering,0,0,1,1,1.0,684,195
+Geothermal Energy,0,0,1,1,1.0,684,195
+IEEE Circuits and Systems Magazine,0,0,1,3,1.0,684,195
+"IEE Proceedings - Generation, Transmission and Distribution",0,0,1,3,1.0,684,195
+Hindawi Limited,0,0,1,1,1.0,684,195
+Heritage Science,0,0,1,5,1.0,684,195
+HardwareX,0,0,1,2,1.0,684,195
+Journal of Materials in Civil Engineering,0,0,1,2,1.0,684,195
+Journal of Manufacturing and Materials Processing,0,0,1,1,1.0,684,195
+Journal of Spatial Science,0,0,1,1,1.0,684,195
+Journal of Risk Research,0,0,1,2,1.0,684,195
+Journal of Porous Media,0,0,1,1,1.0,684,195
+Journal of Physics: Energy,0,0,1,2,1.0,684,195
+Journal of Nuclear Science and Technology,0,0,1,1,1.0,684,195
+Journal of Theoretical and Applied Mechanics,0,0,1,1,1.0,684,195
+Journal of The Royal Society Interface,0,0,1,9,1.0,684,195
+Journal of The Electrochemical Society,0,0,1,2,1.0,684,195
+Frontiers in Sustainable Cities,0,0,1,1,1.0,684,195
+Frontiers in Energy,0,0,1,2,1.0,684,195
+Frontiers in Built Environment,0,0,1,1,1.0,684,195
+Frontiers in Big Data,0,0,1,1,1.0,684,195
+Journal of the Royal Society of New Zealand,0,0,1,1,1.0,684,195
+Journal of the Energy Institute,0,0,1,1,1.0,684,195
+European Environmental Law Review,0,0,1,1,1.0,684,195
+Environmental and Climate Technologies,0,0,1,8,1.0,684,195
+Environmental Innovation and Societal Transitions,0,0,1,1,1.0,684,195
+Journal of Vibration and Control,0,0,1,1,1.0,684,195
+Journal of Urban Planning and Development,0,0,1,3,1.0,684,195
+Journal of Turbomachinery,0,0,1,2,1.0,684,195
+MDPI AG,0,0,1,5,1.0,684,195
+Engineering Analysis with Boundary Elements,0,0,1,1,1.0,684,195
+"Energy, Sustainability and Society",0,0,1,5,1.0,684,195
+Lubricants,0,0,1,1,1.0,684,195
+Latvian Journal of Physics and Technical Sciences,0,0,1,2,1.0,684,195
+Latin American Research Review,0,0,1,7,1.0,684,195
+Emerging Science Journal,0,0,1,2,1.0,684,195
+Energy Storage Materials,0,0,1,1,1.0,684,195
+Energy Storage,0,0,1,1,1.0,684,195
+"Energy Sources, Part A: Recovery, Utilization, and Environmental Effects",0,0,1,3,1.0,684,195
+Energy Sources,0,0,1,1,1.0,684,195
+Measurement,0,0,1,1,1.0,684,195
+Mathematics and Computers in Simulation,0,0,1,2,1.0,684,195
+Mathematical Modelling of Engineering Problems,0,0,1,4,1.0,684,195
+Materials Science and Engineering: C,0,0,1,1,1.0,684,195
+Marine Technology Society Journal,0,0,1,2,1.0,684,195
+Mobile Web and Intelligent Information Systems,0,0,1,1,1.0,684,195
+Mobile Networks and Applications,0,0,1,1,1.0,684,195
+Elsevier BV,0,0,1,1,1.0,684,195
+Electrical Engineering in Japan,0,0,1,11,1.0,684,195
+Economie et statistique,0,0,1,3,1.0,684,195
+EPJ Photovoltaics,0,0,1,2,1.0,684,195
+Metallurgical and Materials Transactions B,0,0,1,1,1.0,684,195
+Defence Technology,0,0,1,2,1.0,684,195
+Natural Gas Industry B,0,0,1,19,1.0,684,195
+Nanotechnology Reviews,0,0,1,2,1.0,684,195
+"Computers, Materials & Continua",0,0,1,1,1.0,684,195
+Computer Standards & Interfaces,0,0,1,2,1.0,684,195
+Nuclear Energy,0,0,1,2,1.0,684,195
+Noise Control Engineering Journal,0,0,1,2,1.0,684,195
+Next Sustainability,0,0,1,1,1.0,684,195
+Naval Engineers Journal,0,0,1,1,1.0,684,195
+Computer Science and Information Systems,0,0,1,2,1.0,684,195
+Computer Science Review,0,0,1,1,1.0,684,195
+Computer Physics Communications,0,0,1,1,1.0,684,195
+Computational Management Science,0,0,1,1,1.0,684,195
+Computational Geosciences,0,0,1,1,1.0,684,195
+Progress in Nuclear Energy,0,0,1,4,1.0,684,195
+Progress in Energy,0,0,1,3,1.0,684,195
+Proceedings of the Institution of Civil Engineers - Engineering Sustainability,0,0,1,2,1.0,684,195
+Proceedings of the Institution of Civil Engineers - Energy,0,0,1,1,1.0,684,195
+Petroleum Science and Technology,0,0,1,1,1.0,684,195
+Refocus,0,0,1,1,1.0,684,195
+Coastal Engineering,0,0,1,1,1.0,684,195
+Cleaner Environmental Systems,0,0,1,1,1.0,684,195
+Cleaner Energy Systems,0,0,1,1,1.0,684,195
+Chinese Science Bulletin,0,0,1,1,1.0,684,195
+Chemie Ingenieur Technik,0,0,1,11,1.0,684,195
+Cement and Concrete Research,0,0,1,1,1.0,684,195
+Canadian Journal of Electrical and Computer Engineering,0,0,1,1,1.0,684,195
+Canadian Journal of Civil Engineering,0,0,1,2,1.0,684,195
+CIRP Annals,0,0,1,2,1.0,684,195
+Road Materials and Pavement Design,0,0,1,1,1.0,684,195
+Research Policy,0,0,1,38,1.0,684,195
+Renewable Energy Focus,0,0,1,1,1.0,684,195
+Reliability: Theory & Applications,0,0,1,1,1.0,684,195
+Buildings and Cities,0,0,1,2,1.0,684,195
+Bioresource Technology Reports,0,0,1,2,1.0,684,195
+Biofuel Research Journal,0,0,1,2,1.0,684,195
+SIMULATION,0,0,1,2,1.0,684,195
+SAE International Journal of Materials and Manufacturing,0,0,1,2,1.0,684,195
+Bauphysik,0,0,1,2,1.0,684,195
+Batteries,0,0,1,3,1.0,684,195
+Autonomous Robots,0,0,1,1,1.0,684,195
+Automotive Innovation,0,0,1,1,1.0,684,195
+Atomic Energy,0,0,1,4,1.0,684,195
+Artificial Intelligence Review,0,0,1,5,1.0,684,195
+Architectural Science Review,0,0,1,1,1.0,684,195
+Architectural Engineering and Design Management,0,0,1,3,1.0,684,195
+Smart Science,0,0,1,1,1.0,684,195
+"Smart Innovation, Systems and Technologies",0,0,1,1,1.0,684,195
+Smart Energy,0,0,1,2,1.0,684,195
+Smart Cities,0,0,1,1,1.0,684,195
+Sustainable Energy & Fuels,0,0,1,1,1.0,684,195
+Applied System Innovation,0,0,1,1,1.0,684,195
+Applied Statistics,0,0,1,5,1.0,684,195
+Applied Ocean Research,0,0,1,1,1.0,684,195
+Applied Ergonomics,0,0,1,3,1.0,684,195
+Statistical Science,0,0,1,4,1.0,684,195
+Software: Practice and Experience,0,0,1,1,1.0,684,195
+iScience,0,0,1,1,1.0,684,195
+"e-Prime - Advances in Electrical Engineering, Electronics and Energy",0,0,1,3,1.0,684,195
+e & i Elektrotechnik und Informationstechnik,0,0,1,2,1.0,684,195
+annals of telecommunications - annales des télécommunications,0,0,1,4,1.0,684,195
+2001 Power Engineering Society Summer Meeting. Conference Proceedings (Cat. No.01CH37262),0,0,1,3,1.0,684,195
+Transportation Engineering,0,0,1,1,1.0,684,195
+Transportation,0,0,1,13,1.0,684,195
+Thermal Science,0,0,1,1,1.0,684,195
+Advanced Energy and Sustainability Research,0,0,1,1,1.0,684,195
+Accident Analysis & Prevention,0,0,1,7,1.0,684,195
+International Journal of Bio-Inspired Computation,0,0,1,1,1.0,684,195
+Interface Focus,0,0,1,1,1.0,684,195
+Informes de la Construcción,0,0,1,1,1.0,684,195
+Water Science and Engineering,0,0,1,5,1.0,684,195
+Water Cycle,0,0,1,2,1.0,684,195
