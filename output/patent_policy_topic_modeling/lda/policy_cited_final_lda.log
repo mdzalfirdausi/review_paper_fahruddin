@@ -1,0 +1,38 @@
+Processed rows: 2715 
+Metadata rows: 2715 
+Empty processed documents before DTM: 0 
+Documents before final DTM: 2715 
+Raw vocabulary: 14384 
+Raw tokens: 355094 
+Minimum document frequency: 28 
+Terms removed by DF filter: 13119 
+Vocabulary after DF filtering: 1265 
+Empty documents removed after DF filtering: 0 
+Final documents: 2715 
+Final vocabulary: 1265 
+Final tokens: 298508 
+
+Fitting final K = 20 LDA model on full corpus...
+Seed: 123 
+Burn-in: 500 
+Iterations: 2000 
+Thin: 50 
+
+Theta max row-sum error: 1.110223e-16 
+Beta max row-sum error: 0 
+
+============================================================
+FINAL LDA COMPLETE
+============================================================
+K: 20 
+Documents: 2715 
+Vocabulary: 1265 
+Tokens: 298508 
+Minimum DF: 28 
+Minimum term length: 3 
+Theta max row-sum error: 1.110223e-16 
+Beta max row-sum error: 0 
+Topic prevalence sum: 1 
+Elapsed seconds: 28.73681 
+============================================================
+
