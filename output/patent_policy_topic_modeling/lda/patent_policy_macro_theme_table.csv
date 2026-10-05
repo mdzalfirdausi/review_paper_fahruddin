@@ -1,11 +1,12 @@
 Common_Macro_Theme,Patent_Topics,Patent_Prevalence,Policy_Topics,Policy_Prevalence,Difference_pp
-Metaheuristics and Computational Optimization,"P13, P17, P19, P20",19.65166851730948,L6,4.73352831655952,14.918140200749962
-"Machine Learning, Forecasting, and Predictive Analytics","P11, P15, P18",15.01813975592712,L11,5.06662845438709,9.95151130154003
-OPF and Mathematical Optimization,"P4, P12",10.03162096601646,"L4, L9",9.62566716978856,0.40595379622789984
-"State Estimation, Monitoring, and Cybersecurity","P5, P10",9.95512232960121,"L10, L12, L20",14.75663841529328,-4.80151608569207
-"Reliability, Resilience, Security, and Stability","P3, P6",9.89535196564055,"L13, L16, L18",14.961707380167699,-5.066355414527148
-Distributed Control and Grid Operation,"P1, P9",9.922951157134321,L15,4.99349044648385,4.929460710650471
-"Decarbonization, Electrification, and Integrated Energy Systems","P2, P8",10.322484169702019,"L1, L2, L8",15.05658244507772,-4.7340982753757
-"Energy Management, Markets, and Demand Flexibility",P16,5.06786586840752,"L17, L19",9.89726946910229,-4.8294036006947705
-"Smart Grids, IoT, and Digitalization",P14,5.13333613259239,"L7, L14",10.61049554867238,-5.47715941607999
-"Renewable Energy, Storage, and Uncertainty",P7,5.00145913766892,"L3, L5",10.29799235446761,-5.296533216798689
+Data-Driven Forecasting and Analysis,"P8, P10, P15, P18, P20",25.52516023511827,"L7, L8",10.62468111461309,14.900479120505182
+"Thermal, Fuel, and Industrial Processes","P1, P2",10.27113104340593,L4,4.78344708402485,5.48768395938108
+Cross-Cutting and Mixed Topics,"P3, P7, P9",14.69579769598962,"L2, L9, L17, L19",19.88232710218034,-5.18652940619072
+"Grid Control, Monitoring, and Smart Systems",,,L3,5.16834633865169,
+"Renewable Energy, Storage, and Power-System Planning","P5, P13, P17",14.60061478407219,"L10, L16, L18",14.615733036639508,-0.01511825256731747
+"Sustainability, Climate, and Energy Policy",P11,4.98574799879642,"L5, L11, L14",15.324195577200161,-10.338447578403741
+Computing and Communication Infrastructure,"P6, P14",10.1406244859206,,,
+Optimization and Engineering Design,P16,5.06786586840752,,,
+Buildings and Residential Energy Use,P4,4.93465926036077,"L1, L13, L15, L20",19.98602352268714,-15.05136426232637
+"Materials, Devices, and Energy Harvesting",P12,5.09696170565569,L12,4.8817179074437,0.2152437982119899
+Electric Mobility,P19,4.68143692227298,L6,4.73352831655952,-0.052091394286539305
