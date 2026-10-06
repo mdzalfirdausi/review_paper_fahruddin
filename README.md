@@ -73,6 +73,69 @@ The attached copies of some notebooks have numbered suffixes such as `(3)` or `(
 
 The input exports are not made by these notebooks. Obtain the Scopus, Lens, and Overton files legitimately and place them at the paths configured in each script. In particular, `extract_lens_dois.py` and `extract_patent_cited_scholar.py` contain a specific dated Lens export filename; change their `INPUT_FILE` / `LENS_EXPORT_FILE` values when using a new export. The Overton matching script expects `data/overton/overton_raw.xlsx`. Keep DOI matching and document order consistent across the processed corpus, metadata, and train/test index files.
 
+## Local Scopus requirements and Git exclusion
+
+The repository does **not** include the Scopus export. Supply your own export locally at **`data/scopus/scopus_full.xlsx`** before running the workflow. The scripts read the first Excel worksheet by default. Export the forecasting-related search results with citation information, bibliographic information, abstracts, keywords, affiliations, and funding fields; preserve these exact headers for the complete matching and analysis workflow:
+
+```text
+Link
+Authors
+Author full names
+Author(s) ID
+Title
+Year
+Source title
+Cited by
+Affiliations
+Publisher
+Abbreviated Source Title
+DOI
+Abstract
+Author Keywords
+Index Keywords
+Funding Details
+Funding Texts
+```
+
+The academic corpus preparation requires `Title`, `Year`, `DOI`, and `Abstract`; the larger column set above is needed by the matching scripts and downstream citation analyses. Keep genuinely missing values empty. Academic modeling combines titles and abstracts and excludes records without usable text; patent/policy modeling uses the matched abstracts. DOI matching requires usable DOI values, so an unmatched publication is not automatically evidence of zero external citations.
+
+Create the local input directories from the repository root:
+
+```bash
+mkdir -p data/scopus data/lens data/overton data/lda
+```
+
+Add this rule to the repository-root `.gitignore` to keep the Scopus export local:
+
+```gitignore
+# Local Scopus source data
+/data/scopus/
+```
+
+If Lens/Overton exports and all derived document-level data are also intended to stay local, use the following broader rules instead. Aggregate tables and figures outside these directories can still be selected for publication:
+
+```gitignore
+# Local source exports and matched scholarly records
+/data/
+# Intermediate/model outputs can contain scholarly titles and abstracts
+/output/scopus_research_landscape/lda/
+/output/patent_policy_topic_modeling/metadata/
+/output/patent_policy_topic_modeling/r_preprocessing/
+/output/patent_policy_topic_modeling/lda/
+.ipynb_checkpoints/
+__pycache__/
+/logs/
+```
+
+Inspect notebook outputs and other exported tables before committing: ignoring the input file does not exclude text copied into notebooks or other outputs. Check the rule with:
+
+```bash
+git check-ignore -v data/scopus/scopus_full.xlsx
+git status --short
+```
+
+If `data/scopus/` was already tracked, `.gitignore` alone will not untrack it. In that case, `git rm -r --cached -- data/scopus` removes it from the Git index while retaining the local files; it does not remove earlier committed copies from repository history.
+
 ## Workflow and file roles
 
 | Order | File | Role and principal output |
@@ -105,13 +168,274 @@ python scripts/extract_overton_cited_scholar.py
 
 Optionally run `python scripts/0.doi_filter_overton.py` first when working from its configured raw CSV. The patent/policy topic-modeling notebook and citation-landscape notebook consume the two matched `.xlsx` files; the academic notebook consumes `data/scopus/scopus_full.xlsx`.
 
+## Exact inputs, processing, and outputs
+
+All paths below are **relative to the repository root** (`~/project/review_paper_fahruddin` on ISS). Filenames reflect the supplied code; dated export names must be changed in the corresponding configuration if your exports differ. Each filename in an output row belongs to the directory shown in that row. `{corpus}` means **both** `patent_cited` and `policy_cited`; `{K:03d}` is a zero-padded topic count, for example `002` or `025`.
+
+These are generated data, diagnostic, table, figure, and log files. The modeling code also writes R backend scripts automatically. Outputs from later notebook cells exist only after those cells have run successfully.
+
+### `scripts/0.doi_filter_overton.py`
+
+**Input**
+
+- `data/overton_policy_doc_2026-09-10_12-24-30.csv`
+
+**Process:** Read the `Cited DOIs` column, clean and deduplicate DOI values, and create Scopus DOI search batches.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `data/` | `cleaned_dois.txt`, `recovered_dois.txt`, `rejected_values.txt`, `scopus_doi_queries.txt` |
+
+This optional input is directly under `data/`, not `data/overton/`. This script does not generate `overton_raw.xlsx`.
+
+### `scripts/extract_lens_dois.py`
+
+**Input**
+
+- `data/lens/lenspatcite-export-M_Muna-84f6bb81-32bc-4ec9-97c6-f970293a9752-2026-09-25_01-48-07_cited.xlsx`
+
+**Process:** Extract unique DOI values from the `citation external id` column.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `data/lens/` | `lens_patent_cited_dois.txt` |
+
+### `scripts/extract_patent_cited_scholar.py`
+
+**Input**
+
+- `data/lens/lens_patent_cited_dois.txt`
+- `data/lens/lenspatcite-export-M_Muna-84f6bb81-32bc-4ec9-97c6-f970293a9752-2026-09-25_01-48-07_cited.xlsx`
+- `data/scopus/scopus_full.xlsx`
+
+**Process:** Match normalized DOIs to Scopus records and attach Lens patent-citation and citing-family counts. The Lens export requires `citation external id`, `cited by patent count`, and `citing family count`.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `data/lda/` | `lens_from_scopus_scholar.xlsx` |
+
+### `scripts/extract_overton_cited_scholar.py`
+
+**Input**
+
+- `data/overton/overton_raw.xlsx`
+- `data/scopus/scopus_full.xlsx`
+
+**Process:** Match Overton DOI records to Scopus metadata and abstracts. Required Overton headers are `Title`, `DOI`, `Journal`, `Published on`, `Policy citation count`, `Type`, `Publisher`, `Authors`, `Your tags`, and `ORCIDs`.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `data/lda/` | `overton_from_scopus_scholar.xlsx` |
+
+### `notebooks/3.topic_modeling_patent_policy.ipynb`
+
+**Input**
+
+- `data/lda/lens_from_scopus_scholar.xlsx`
+- `data/lda/overton_from_scopus_scholar.xlsx`
+
+**Process:** Prepare the two abstract corpora independently, preprocess text in R, build document-term matrices, compare candidate K values, fit final LDA models, and manually interpret and aggregate topics.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/patent_policy_topic_modeling/metadata/` | `{corpus}_metadata.csv` |
+| `output/patent_policy_topic_modeling/r_preprocessing/` | `{corpus}_abstracts.csv`, `{corpus}_processed.csv`, `{corpus}_raw_dtm_summary.csv`, `{corpus}_raw_dtm_terms.csv`, `{corpus}_final_dtm_summary.csv`, `{corpus}_final_dtm_terms.csv` |
+| `output/patent_policy_topic_modeling/lda/` | `{corpus}_train_indices.csv`, `{corpus}_test_indices.csv`, `{corpus}_coarse_k_search.csv`, `{corpus}_extended_k_search.csv`, `{corpus}_candidate_evaluation.csv`, `{corpus}_candidate_topic_diagnostics.csv`, `{corpus}_candidate_top_terms.csv`, `{corpus}_final_metadata.csv`, `{corpus}_final_model_summary.csv`, `{corpus}_final_top_terms.csv`, `{corpus}_final_theta.csv`, `{corpus}_final_document_topics.csv`, `{corpus}_final_topic_prevalence.csv`, `{corpus}_final_representative_documents.csv`, `{corpus}_final_topic_interpretation.csv`, `patent_policy_macro_theme_table.csv` |
+| `output/patent_policy_topic_modeling/model_selection/` | `{corpus}_train_indices.csv`, `{corpus}_test_indices.csv`, `{corpus}_coarse_k_search.csv`, `{corpus}_extended_k_search.csv`, `{corpus}_candidate_evaluation.csv`, `{corpus}_candidate_topic_diagnostics.csv`, `{corpus}_candidate_top_terms.csv`, `{corpus}_combined_k_search.csv`, `patent_policy_model_selection.xlsx` |
+| `output/patent_policy_topic_modeling/figures/` | `patent_policy_macro_theme_difference.pdf`, `patent_policy_macro_theme_difference.png`, `patent_policy_macro_theme_dumbbell.pdf`, `patent_policy_macro_theme_dumbbell.png` |
+
+Final interpretation and prevalence CSVs are written under `lda/`, even though other topic-related directories are created. Manual mappings must be rebuilt after selecting a new final K.
+
+### `notebooks/4.topic_analysis_patent_policy.ipynb`
+
+**Input**
+
+- `output/patent_policy_topic_modeling/model_selection/{corpus}_candidate_evaluation.csv`
+- `output/patent_policy_topic_modeling/model_selection/{corpus}_candidate_topic_diagnostics.csv`
+- `output/patent_policy_topic_modeling/model_selection/{corpus}_candidate_top_terms.csv`
+- `output/patent_policy_topic_modeling/model_selection/{corpus}_combined_k_search.csv`
+
+**Process:** Read saved model diagnostics, inspect candidate topics and perplexity improvements, and plot model-selection curves. This notebook does not fit LDA.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/patent_policy_topic_modeling/figures/` | `{corpus}_perplexity_by_k.pdf` |
+
+Other diagnostic tables are displayed in the notebook; they are not additional saved CSV outputs.
+
+### `notebooks/5.scopus_research_landscape_iss.ipynb`
+
+**Input**
+
+- `data/scopus/scopus_full.xlsx`
+- `data/lda/lens_from_scopus_scholar.xlsx`
+- `data/lda/overton_from_scopus_scholar.xlsx`
+
+**Process:** Prepare academic title/abstract text and publication-growth tables; preprocess the corpus, inspect term frequencies, construct the final DTM, and create the train/test split. Later cells load the standalone model-selection/final outputs listed below and create diagnostics and topic labels.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/scopus_research_landscape/tables/` | `scopus_publication_growth.csv` |
+| `output/scopus_research_landscape/figures/` | `scopus_publication_growth.pdf`, `academic_growth_patent_policy_annotated.pdf`, `scopus_df_vocabulary_retention.pdf`, `scopus_academic_k_search.pdf`, `scopus_academic_k_marginal_improvement.pdf`, `scopus_academic_candidate_coherence.pdf` |
+| `output/scopus_research_landscape/lda/r_preprocessing/` | `scopus_academic_processed.csv` |
+| `output/scopus_research_landscape/lda/` | `scopus_academic_corpus.csv`, `scopus_academic_raw_dtm_summary.csv`, `scopus_academic_raw_term_frequency.csv`, `scopus_academic_df_diagnostics.csv`, `scopus_academic_final_dtm_summary.csv`, `scopus_academic_final_dtm_terms.csv`, `scopus_academic_final_dtm.csv`, `scopus_academic_final_vocabulary.csv`, `scopus_academic_train_indices.csv`, `scopus_academic_test_indices.csv`, `scopus_academic_topic_labeling.csv` |
+
+For an external-script run, first execute preprocessing and the split cell in section 3.5. Then run the scripts below and return to the notebook to load results. Its coarse-search cell can also write `output/scopus_research_landscape/lda/scopus_academic_coarse_k_search.csv` when fitting is enabled. The matched patent/policy files are required for the whole notebook, including its growth comparison.
+
+### `notebooks/5.scopus_research_landscape.ipynb`
+
+**Input**
+
+- `data/scopus/scopus_full.xlsx`
+- `data/lda/lens_from_scopus_scholar.xlsx`
+- `data/lda/overton_from_scopus_scholar.xlsx`
+
+**Process:** Alternative academic notebook using the same main input/output paths as the ISS variant. Prepare the corpus and display academic growth, model diagnostics, and topic interpretations.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/scopus_research_landscape/tables/` | `scopus_publication_growth.csv` |
+| `output/scopus_research_landscape/figures/` | `scopus_publication_growth.pdf`, `academic_growth_patent_policy_annotated.pdf`, `scopus_df_vocabulary_retention.pdf`, `scopus_academic_k_search.pdf`, `scopus_academic_k_marginal_improvement.pdf`, `scopus_academic_candidate_coherence.pdf` |
+| `output/scopus_research_landscape/lda/r_preprocessing/` | `scopus_academic_processed.csv` |
+| `output/scopus_research_landscape/lda/` | `scopus_academic_corpus.csv`, `scopus_academic_raw_dtm_summary.csv`, `scopus_academic_raw_term_frequency.csv`, `scopus_academic_df_diagnostics.csv`, `scopus_academic_final_dtm_summary.csv`, `scopus_academic_final_dtm_terms.csv`, `scopus_academic_final_dtm.csv`, `scopus_academic_final_vocabulary.csv`, `scopus_academic_train_indices.csv`, `scopus_academic_test_indices.csv`, `scopus_academic_topic_labeling.csv` |
+
+Use one academic variant consistently: both write into the same directories. The supplied non-ISS version still contains earlier ML–OPF labels. Later model-result loading cells depend on the standalone outputs below, including extended results unless bypassed for K=2–25.
+
+### `scripts/5.scopus_coarse_k_parallel_iss.py`
+
+**Input**
+
+- `output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_train_indices.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_test_indices.csv`
+
+**Process:** Fit independent short-chain LDA models for the configured `K_VALUES`, using the saved train/test split and per-K resume files.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/scopus_research_landscape/lda/coarse_parallel/` | `k_{K:03d}.csv`, `k_{K:03d}.log` |
+| `output/scopus_research_landscape/lda/` | `scopus_academic_coarse_k_search.csv`, `scopus_academic_coarse_parallel.log` |
+
+### `scripts/5.scopus_extended_k_parallel_iss.py`
+
+**Input**
+
+- `output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_train_indices.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_test_indices.csv`
+
+**Process:** Fit independent short-chain LDA models for the configured `K_VALUES`, using the saved train/test split and per-K resume files.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/scopus_research_landscape/lda/extended_parallel/` | `k_{K:03d}.csv`, `k_{K:03d}.log` |
+| `output/scopus_research_landscape/lda/` | `scopus_academic_extended_k_search.csv`, `scopus_academic_extended_parallel.log` |
+
+The extended script is optional and should be skipped when the coarse script already covers every K from 2 through 25.
+
+### `scripts/5.scopus_candidate_evaluation_parallel_iss.py`
+
+**Input**
+
+- `output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_train_indices.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_test_indices.csv`
+
+**Process:** Fit longer-chain candidate models and calculate held-out perplexity, coherence, inter-topic similarity, and topic-level diagnostics.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/scopus_research_landscape/lda/candidate_parallel/` | `k_{K:03d}_summary.csv`, `k_{K:03d}_topics.csv`, `k_{K:03d}_top_terms.csv`, `k_{K:03d}.log` |
+| `output/scopus_research_landscape/lda/` | `scopus_academic_candidate_evaluation.csv`, `scopus_academic_candidate_topic_diagnostics.csv`, `scopus_academic_candidate_top_terms.csv` |
+
+### `scripts/5.scopus_final_lda_iss.py`
+
+**Input**
+
+- `output/scopus_research_landscape/lda/r_preprocessing/scopus_academic_processed.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_corpus.csv`
+
+**Process:** Fit the selected `FINAL_K` on the full academic corpus and attach scholarly metadata to document/topic summaries. This final fit does not use the train/test index files.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/scopus_research_landscape/lda/` | `scopus_academic_final_model_summary.csv`, `scopus_academic_final_top_terms.csv`, `scopus_academic_final_document_topics.csv`, `scopus_academic_final_topic_prevalence.csv`, `scopus_academic_final_representative_documents.csv`, `scopus_academic_final_lda.log` |
+| `output/scopus_research_landscape/lda/final_model/` | `scopus_academic_final_beta.csv` |
+
+### `notebooks/6.patent_policy_citation_landscape.ipynb`
+
+**Input**
+
+- `data/lda/lens_from_scopus_scholar.xlsx`
+- `data/lda/overton_from_scopus_scholar.xlsx`
+- `data/scopus/scopus_full.xlsx`
+- `data/lens/lenspatcite-export-M_Muna-84f6bb81-32bc-4ec9-97c6-f970293a9752-2026-09-25_01-46-54_patents.xlsx`
+- `data/overton/articles-2026-09-30.xlsx`
+
+**Process:** Summarize externally cited publications, journals, authors, countries, overlaps, and citation timelines. The last two inputs are required by the later timeline cells; they are different exports from the DOI-matching inputs.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/patent_policy_citation_landscape/tables/` | `top_patent_cited_publications.csv`, `top_policy_cited_publications.csv`, `journal_comparison.csv`, `author_comparison.csv`, `top_patent_authors.csv`, `top_policy_authors.csv`, `country_comparison.csv`, `top_patent_countries.csv`, `top_policy_countries.csv` |
+| `output/patent_policy_citation_landscape/figures/` | `patent_policy_pathway_overlap.pdf`, `patent_policy_citation_overlap.pdf`, `patent_policy_temporal_evolution.pdf`, `patent_citation_jurisdiction_timeline.pdf`, `policy_citation_country_timeline.pdf`, `policy_citation_organisation_type_timeline.pdf`, `policy_citation_organisation_sector_timeline.pdf` |
+
+Start this notebook with the kernel working directory in `notebooks/`, or replace its `PROJECT_DIR` with the explicit project root.
+
+### `notebooks/7.academic_patent_policy_theme_comparison.ipynb`
+
+**Input**
+
+- `output/scopus_research_landscape/lda/scopus_academic_final_topic_prevalence.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_final_top_terms.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_topic_labeling.csv`
+- `output/scopus_research_landscape/lda/scopus_academic_final_representative_documents.csv`
+- `output/patent_policy_topic_modeling/lda/{corpus}_final_topic_interpretation.csv`
+
+**Process:** Read reviewed topic evidence from all three corpora, apply common macro-theme definitions and topic mappings, aggregate probability-weighted prevalence, and compare thematic similarity and external amplification.
+
+**Output**
+
+| Directory | Filename(s) |
+| --- | --- |
+| `output/academic_patent_policy_comparison/tables/` | `academic_topics_standardized.csv`, `policy_topics_standardized.csv`, `common_macro_theme_taxonomy.csv`, `academic_topic_common_theme_coding_worksheet.csv`, `academic_topic_to_common_macro_theme.csv`, `academic_common_macro_theme_summary.csv`, `academic_patent_policy_common_macro_themes.csv`, `academic_patent_policy_common_macro_themes_long.csv`, `academic_patent_policy_pairwise_similarity.csv`, `academic_patent_policy_theme_consistency.csv`, `academic_patent_policy_external_amplification.csv` |
+| `output/academic_patent_policy_comparison/figures/` | `academic_patent_policy_thematic_landscape.pdf`, `academic_patent_policy_bubble_matrix.pdf` |
+| `output/patent_policy_topic_modeling/lda/` | `patent_policy_macro_theme_table.csv` |
+
+The setup also checks for `output/patent_policy_topic_modeling/lda/patent_policy_macro_theme_table.csv`, but the supplied notebook rebuilds this table rather than reading it as topic evidence. Saving it overwrites the same filename used by notebook 3. This notebook explicitly sets `PROJECT_DIR = Path.home() / "project" / "review_paper_fahruddin"`; change that setup value if your checkout is elsewhere.
+
 ## Rerunning LDA for K 2 to 25
 
 `range(2, 26)` is inclusive of 2 through 25: **24 models per corpus**. Select a final K from the new diagnostics and topic inspection; do not assume the earlier academic K=50 or patent/policy K=20 still applies. Short-chain screening and long-chain candidate evaluation answer different questions, so the second run is substantially more expensive.
 
 ### A. Academic Scopus: prepare inputs
 
-In the supplied `5.scopus_research_landscape_iss(1).ipynb`, run sections **3.1–3.4.2** to create `scopus_academic_processed.csv`, `scopus_academic_corpus.csv`, and the train/test index CSVs. Confirm all are aligned and `FINAL_MIN_DOC_FREQ` matches your processed corpus. The standalone scripts currently hard-code `MIN_DOC_FREQ = 254`; keep it in agreement with the notebook's calculated value, especially if the number of documents or preprocessing has changed.
+In the supplied `5.scopus_research_landscape_iss(1).ipynb`, run sections **3.1–3.4.2 and the train/test split cell in section 3.5** to create `scopus_academic_processed.csv`, `scopus_academic_corpus.csv`, and the train/test index CSVs. Confirm all are aligned and `FINAL_MIN_DOC_FREQ` matches your processed corpus. The standalone scripts currently hard-code `MIN_DOC_FREQ = 254`; keep it in agreement with the notebook's calculated value, especially if the number of documents or preprocessing has changed.
 
 The notebook's section **3.5** sets `K_COARSE` (cell containing `TRAIN_FRACTION = 0.80`) and its `RUN_COARSE_SEARCH = False` cell loads existing results. If you are using the standalone coarse script, keep that flag `False`, set the notebook's `K_COARSE = list(range(2, 26))` for consistency, and run the separate script as shown below. The `K` values are independently hard-coded in each standalone script.
 
