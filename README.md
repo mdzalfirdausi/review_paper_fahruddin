@@ -232,6 +232,55 @@ python scripts/extract_overton_cited_scholar.py
 
 Optionally run `python scripts/0.doi_filter_overton.py` first when working from its configured raw CSV. The patent/policy topic-modeling notebook and citation-landscape notebook consume the two matched `.xlsx` files; the academic notebook consumes `data/scopus/scopus_full.xlsx`.
 
+## Which files perform topic modeling, and where are models saved?
+
+Three independent LDA models are fitted: the full academic Scopus corpus, patent-cited scholarly publications matched from Lens, and policy-cited scholarly publications matched from Overton. **Lens and Overton identify cited scholarly records; the matched Scopus abstracts supply the modeling text. These are not models of patent full text or policy-document full text.**
+
+| Corpus | Modeling input | Preparation and fitting files | Final output directory |
+| --- | --- | --- | --- |
+| Academic Scopus | `data/scopus/scopus_full.xlsx` (titles and abstracts) | Prepare text and the split in `notebooks/5.scopus_research_landscape_iss.ipynb`; search K with `scripts/5.scopus_coarse_k_parallel_iss.py`; evaluate candidates with `scripts/5.scopus_candidate_evaluation_parallel_iss.py`; fit the selected final model with `scripts/5.scopus_final_lda_iss.py`. The extended-search script is optional. | `output/scopus_research_landscape/lda/` |
+| Lens / patent-cited scholarly corpus | `data/lda/lens_from_scopus_scholar.xlsx` (matched Scopus abstracts) | `scripts/extract_lens_dois.py` and `scripts/extract_patent_cited_scholar.py` prepare the matched data. **`notebooks/3.topic_modeling_patent_policy.ipynb` performs preprocessing, candidate evaluation, and final LDA fitting** for the `patent_cited` corpus. | `output/patent_policy_topic_modeling/lda/`, filenames prefixed `patent_cited_` |
+| Overton / policy-cited scholarly corpus | `data/lda/overton_from_scopus_scholar.xlsx` (matched Scopus abstracts) | `scripts/extract_overton_cited_scholar.py` prepares the matched data. **The same `notebooks/3.topic_modeling_patent_policy.ipynb` fits a separate LDA model** for the `policy_cited` corpus. | `output/patent_policy_topic_modeling/lda/`, filenames prefixed `policy_cited_` |
+
+`notebooks/4.topic_analysis_patent_policy.ipynb` analyzes existing model-selection results. Notebook 6 performs citation analysis. Notebook 7 compares manually harmonized themes. These three notebooks do not fit new LDA models. The alternative `5.scopus_research_landscape.ipynb` shares the academic output locations; use one academic notebook consistently.
+
+### Academic Scopus final model outputs
+
+| Saved file (relative to repository root) | Contents |
+| --- | --- |
+| `output/scopus_research_landscape/lda/scopus_academic_final_model_summary.csv` | Final-model summary, including the selected K. |
+| `output/scopus_research_landscape/lda/final_model/scopus_academic_final_beta.csv` | Topic–term probabilities (beta). |
+| `output/scopus_research_landscape/lda/scopus_academic_final_document_topics.csv` | Document–topic probabilities with document metadata. |
+| `output/scopus_research_landscape/lda/scopus_academic_final_top_terms.csv` | Highest-probability terms for each topic. |
+| `output/scopus_research_landscape/lda/scopus_academic_final_topic_prevalence.csv` | Probability-weighted topic prevalence. |
+| `output/scopus_research_landscape/lda/scopus_academic_final_representative_documents.csv` | Representative scholarly publications for each topic. |
+| `output/scopus_research_landscape/lda/scopus_academic_topic_labeling.csv` | Interpretation worksheet, produced/updated by the academic notebook after fitting. |
+
+### Lens and Overton final model outputs
+
+All the following files are under **`output/patent_policy_topic_modeling/lda/`**. Replace `{corpus}` with `patent_cited` for Lens or `policy_cited` for Overton:
+
+| Filename | Contents |
+| --- | --- |
+| `{corpus}_final_model_summary.csv` | Summary of that corpus's selected final model. |
+| `{corpus}_final_theta.csv` | Document–topic probability matrix (theta). |
+| `{corpus}_final_document_topics.csv` | Document-level topic results. |
+| `{corpus}_final_metadata.csv` | Metadata aligned to the final modeling corpus. |
+| `{corpus}_final_top_terms.csv` | Highest-probability terms for each topic. |
+| `{corpus}_final_topic_prevalence.csv` | Probability-weighted topic prevalence. |
+| `{corpus}_final_representative_documents.csv` | Representative publications for each topic. |
+| `{corpus}_final_topic_interpretation.csv` | Reviewed topic labels and interpretation information. |
+
+For example, the Lens probability matrix is `output/patent_policy_topic_modeling/lda/patent_cited_final_theta.csv`; the Overton matrix is `output/patent_policy_topic_modeling/lda/policy_cited_final_theta.csv`.
+
+### Model outputs versus a reusable fitted model
+
+**The supplied code exports model results to CSV; it does not serialize the complete fitted R LDA object with `saveRDS()`.** A directory named `final_model/` does not mean an `.rds` model exists. The Scopus script exports beta and document-topic results; the patent/policy notebook exports theta and top terms, but does not save a complete beta matrix or a serialized model in the supplied version.
+
+Use these CSVs for interpretation, prevalence tables, and figures. If a reusable fitted object is needed for later R analysis or inference on new documents, add `saveRDS()` to the relevant final-fitting R backend and preserve its vocabulary and preprocessing configuration. That would be an additional code change; this README update does not implement model-object serialization. Rerunning the existing final-fitting stages writes the same output filenames, so archive previous outputs if they must be retained.
+
+On Windows, prepend `M:\projects_latex\review_paper_fahruddin\` to the relative paths above. On ISS, prepend `~/project/review_paper_fahruddin/`. For example, Scopus results are in `M:\projects_latex\review_paper_fahruddin\output\scopus_research_landscape\lda\` on the illustrated Windows checkout.
+
 ## Exact inputs, processing, and outputs
 
 All paths below are **relative to the repository root** (`M:\projects_latex\review_paper_fahruddin` on Windows, or `~/project/review_paper_fahruddin` on ISS). Filenames reflect the supplied code; dated export names must be changed in the corresponding configuration if your exports differ. Each filename in an output row belongs to the directory shown in that row. `{corpus}` means **both** `patent_cited` and `policy_cited`; `{K:03d}` is a zero-padded topic count, for example `002` or `025`.
