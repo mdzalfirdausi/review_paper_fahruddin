@@ -11,41 +11,99 @@ This repository analyzes forecasting-related scholarly publications from Scopus 
 - R packages used by the generated R backends: `tm`, `SnowballC`, `slam`, and `topicmodels`.
 - `tmux` is optional for keeping long commands attached to a server session. On a shared cluster, use the computing resources and job scheduler according to the site's rules.
 
-On a personal Ubuntu machine with administrator access, Git and tmux can be installed with:
+### Windows setup
 
-```bash
-sudo apt update
-sudo apt install git tmux
+Windows is supported as a setup target; Ubuntu is not required. Install Git for Windows, a Python/Conda distribution, and [R for Windows](https://cran.r-project.org/bin/windows/base/). RStudio is optional: this workflow calls `Rscript.exe` from Python. Install R packages from the R console:
+
+```r
+install.packages(c("tm", "SnowballC", "slam", "topicmodels"), repos = "https://cloud.r-project.org")
+sapply(c("tm", "SnowballC", "slam", "topicmodels"), requireNamespace, quietly = TRUE)
 ```
 
-On a managed cluster, use modules or ask the administrator for Git/tmux instead of assuming `sudo` access. If Conda is available, create a dedicated Python/R environment:
+All four checks should return `TRUE`. Windows binary packages generally avoid compilation; if an installation requires compiling source packages, use the matching [Rtools](https://cran.r-project.org/bin/windows/Rtools/) release. See the [R Windows FAQ](https://cran.r-project.org/bin/windows/base/rw-FAQ.html).
+
+In a Conda-enabled PowerShell terminal, create the Python environment:
+
+```powershell
+conda create -n forecasting-lda -c conda-forge python=3.11 pandas numpy scipy matplotlib matplotlib-venn openpyxl jupyterlab
+conda activate forecasting-lda
+python --version
+git --version
+```
+
+If PowerShell does not recognize Conda, initialize PowerShell from your Conda installation prompt with `conda init powershell`, then reopen the terminal. An existing environment can also be used if all required packages are installed.
+
+Clone the repository only if you do not already have a checkout:
+
+```powershell
+Set-Location 'M:\projects_latex'
+git clone https://github.com/mdzalfirdausi/review_paper_fahruddin.git
+Set-Location 'M:\projects_latex\review_paper_fahruddin'
+jupyter lab
+```
+
+If you already have the project, activate the environment and go directly to its directory. Configure GitHub authentication first if the repository requires it.
+
+### Configure Rscript for your operating system
+
+The supplied modeling files contain the ISS-specific path `/nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript`. Replace `RSCRIPT` in **all four `scripts/5.scopus_*_iss.py` scripts** and the setup cells of the academic and patent/policy modeling notebooks. For Windows, use the actual installed executable, for example:
+
+```python
+from pathlib import Path
+
+# Replace R-X.Y.Z with your installed version/directory.
+RSCRIPT = Path(r"C:\Program Files\R\R-X.Y.Z\bin\Rscript.exe")
+assert RSCRIPT.is_file(), f"Rscript not found: {RSCRIPT}"
+```
+
+Alternatively, if Rscript is already on the terminal/kernel's PATH, use this on either operating system:
+
+```python
+from pathlib import Path
+from shutil import which
+
+rscript_executable = which("Rscript")
+if rscript_executable is None:
+    raise FileNotFoundError("Add Rscript to PATH or configure its absolute path.")
+RSCRIPT = Path(rscript_executable)
+```
+
+Restart Jupyter after changing PATH. `Get-Command Rscript` checks discovery in PowerShell; `which Rscript` does the same in Bash. The `_iss` filenames identify the supplied scripts; keep their filenames and adapt configuration for Windows. Their Windows execution has not been tested here.
+
+### Optional Linux / ISS setup
+
+On ISS, use the installed Conda environment or create one with Python and R:
 
 ```bash
-conda create -n forecasting-lda -c conda-forge \
-  python=3.11 pandas numpy scipy matplotlib matplotlib-venn openpyxl \
-  jupyterlab r-base r-tm r-snowballc r-slam r-topicmodels
+conda create -n forecasting-lda -c conda-forge python=3.11 pandas numpy scipy matplotlib matplotlib-venn openpyxl jupyterlab r-base r-tm r-snowballc r-slam r-topicmodels
 conda activate forecasting-lda
 which python
 which Rscript
 Rscript -e 'sapply(c("tm","SnowballC","slam","topicmodels"), requireNamespace, quietly=TRUE)'
-```
-
-The last command should report `TRUE` for each R package. The standalone Scopus scripts and the modeling notebooks currently specify a **hard-coded** `RSCRIPT = Path(r"/nfs/mfirdausi/miniconda3/envs/pytorch/bin/Rscript")`. If this is not the value of `which Rscript` in your active environment, edit `RSCRIPT` in the four `5.scopus_*_iss.py` scripts and in the setup cells of the academic and patent/policy modeling notebooks. Do this before fitting models.
-
-From the repository root, for example:
-
-```bash
-git clone https://github.com/mdzalfirdausi/review_paper_fahruddin.git
-cd review_paper_fahruddin
-git status
+cd ~/project/review_paper_fahruddin
 jupyter lab
 ```
 
-If the repository is private, configure GitHub access before cloning. See the [Git installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [Jupyter installation guide](https://jupyter.org/install), and [tmux getting started guide](https://github.com/tmux/tmux/wiki/Getting-Started).
+Git and optional tmux must be installed on that Linux host. Follow cluster instructions for modules, package installation, and compute allocation. Native Windows PowerShell does not use the Bash/tmux commands shown later; those are for an SSH session on ISS or a separately configured Linux/WSL environment.
 
 ## Expected layout and data
 
 Run the Python scripts from the repository root. They determine `PROJECT_DIR` as the parent of `scripts/`. Open notebooks with the repository root as the working directory or from `notebooks/`; most modeling notebooks detect either location. **The citation-landscape notebook is an exception:** its `PROJECT_DIR = Path.cwd().resolve().parent` assumes the notebook kernel starts in `notebooks/`. Set `PROJECT_DIR` explicitly if starting it at the root.
+
+For Windows notebooks, including notebooks 6 and 7, replace the project-root assignment in the setup cell with your checkout path:
+
+```python
+from pathlib import Path
+PROJECT_DIR = Path(r"M:\projects_latex\review_paper_fahruddin")
+```
+
+On ISS, the corresponding assignment is:
+
+```python
+PROJECT_DIR = Path.home() / "project" / "review_paper_fahruddin"
+```
+
+The required Scopus filename is **`scopus_full.xlsx`**. Its Windows location is **`M:\projects_latex\review_paper_fahruddin\data\scopus\scopus_full.xlsx`**; the repository-relative path remains `data/scopus/scopus_full.xlsx` on either system. Keep the standalone scripts in `scripts/` so their existing project-root detection works.
 
 ```text
 review_paper_fahruddin/
@@ -100,6 +158,12 @@ Funding Texts
 The academic corpus preparation requires `Title`, `Year`, `DOI`, and `Abstract`; the larger column set above is needed by the matching scripts and downstream citation analyses. Keep genuinely missing values empty. Academic modeling combines titles and abstracts and excludes records without usable text; patent/policy modeling uses the matched abstracts. DOI matching requires usable DOI values, so an unmatched publication is not automatically evidence of zero external citations.
 
 Create the local input directories from the repository root:
+
+```powershell
+New-Item -ItemType Directory -Force -Path data/scopus,data/lens,data/overton,data/lda
+```
+
+Or in Linux Bash:
 
 ```bash
 mkdir -p data/scopus data/lens data/overton data/lda
@@ -158,7 +222,7 @@ If `data/scopus/` was already tracked, `.gitignore` alone will not untrack it. I
 
 ### Typical commands for input matching
 
-From the repository root, after placing the exports and checking their configured filenames:
+From the repository root, after placing the exports and checking their configured filenames, run these commands in either a Conda-enabled Windows terminal or Linux Bash:
 
 ```bash
 python scripts/extract_lens_dois.py
@@ -170,7 +234,7 @@ Optionally run `python scripts/0.doi_filter_overton.py` first when working from 
 
 ## Exact inputs, processing, and outputs
 
-All paths below are **relative to the repository root** (`~/project/review_paper_fahruddin` on ISS). Filenames reflect the supplied code; dated export names must be changed in the corresponding configuration if your exports differ. Each filename in an output row belongs to the directory shown in that row. `{corpus}` means **both** `patent_cited` and `policy_cited`; `{K:03d}` is a zero-padded topic count, for example `002` or `025`.
+All paths below are **relative to the repository root** (`M:\projects_latex\review_paper_fahruddin` on Windows, or `~/project/review_paper_fahruddin` on ISS). Filenames reflect the supplied code; dated export names must be changed in the corresponding configuration if your exports differ. Each filename in an output row belongs to the directory shown in that row. `{corpus}` means **both** `patent_cited` and `policy_cited`; `{K:03d}` is a zero-padded topic count, for example `002` or `025`.
 
 These are generated data, diagnostic, table, figure, and log files. The modeling code also writes R backend scripts automatically. Outputs from later notebook cells exist only after those cells have run successfully.
 
@@ -495,7 +559,38 @@ Use lower held-out perplexity and topic similarity, higher coherence, and the ac
 
 **Existing result files:** The standalone coarse/candidate scripts resume from per-K CSVs when they look complete; they do not check whether the underlying corpus, vocabulary, random split, or settings changed. When those inputs change, archive the previous `coarse_parallel/` and `candidate_parallel/` directories (or use a new output directory) before starting, so old results are not silently reused. Back up old final outputs if you need them: the final run writes to the same filenames. The patent/policy notebook also writes its earlier named results to the same output hierarchy, so archive the prior output for a clean comparison.
 
-## Running the Scopus scripts on ISS
+## Running the Scopus scripts on Windows
+
+After setting `RSCRIPT`, preparing the corpus and split files, and editing K to 2–25, use a Conda-enabled PowerShell terminal:
+
+```powershell
+conda activate forecasting-lda
+Set-Location 'M:\projects_latex\review_paper_fahruddin'
+New-Item -ItemType Directory -Force -Path logs
+python -u scripts/5.scopus_coarse_k_parallel_iss.py 2>&1 | Tee-Object -FilePath logs/scopus_coarse_k2_25.log
+```
+
+After it finishes, check `$LASTEXITCODE` and inspect the resulting CSV. Then run candidate evaluation:
+
+```powershell
+python -u scripts/5.scopus_candidate_evaluation_parallel_iss.py 2>&1 | Tee-Object -FilePath logs/scopus_candidate_k2_25.log
+```
+
+After choosing and setting `FINAL_K`, run:
+
+```powershell
+python -u scripts/5.scopus_final_lda_iss.py 2>&1 | Tee-Object -FilePath logs/scopus_final_lda.log
+```
+
+Keep the terminal open and prevent sleep while models run. Monitor the log from another PowerShell terminal with:
+
+```powershell
+Get-Content 'M:\projects_latex\review_paper_fahruddin\logs\scopus_coarse_k2_25.log' -Tail 30 -Wait
+```
+
+Use Task Manager to inspect Python/R CPU and memory use. Set `MAX_WORKERS` to suit available RAM and CPUs. Run the scripts as files rather than pasting the multiprocessing code into notebook cells. The input/output filenames and K-selection procedure are the same on Windows and ISS.
+
+## Running the Scopus scripts on ISS / Linux
 
 After activating the environment, from the **repository root**:
 
@@ -509,7 +604,7 @@ python -u scripts/5.scopus_final_lda_iss.py 2>&1 | tee logs/scopus_final_lda.log
 
 Do **not** start all three together: candidate evaluation follows preparation and coarse inspection; the final full-corpus model follows selection. The standalone scripts generate their R worker files automatically, so you run the `.py` files, not the generated `.R` files. The patent/policy LDA procedure in the supplied repository is notebook-driven: open `3.topic_modeling_patent_policy.ipynb` in JupyterLab and execute its stages in order. Notebook 4 reads its saved output; it does not launch a new fit.
 
-### Optional tmux example for K=2–25
+### Optional tmux example for K=2–25 (ISS / Linux only)
 
 Use tmux if the compute environment allows a long interactive job. From the project root:
 
