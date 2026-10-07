@@ -36,9 +36,7 @@ If PowerShell does not recognize Conda, initialize PowerShell from your Conda in
 Clone the repository only if you do not already have a checkout:
 
 ```powershell
-Set-Location 'M:\projects_latex'
 git clone https://github.com/mdzalfirdausi/review_paper_fahruddin.git
-Set-Location 'M:\projects_latex\review_paper_fahruddin'
 jupyter lab
 ```
 
